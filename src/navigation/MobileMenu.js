@@ -36,28 +36,24 @@ const MobileMenu = () => {
   // };
 
   return (
-    <div className='header'>
-      <img src={image} height="60" width="60" />
-    <nav className="navbar">
-      
-      <button type="button" onClick={handleToggle}>
-        {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
-      </button>
-      
-      
-      <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
-        {Links.map((link) => (
-          <li className="nav-item" key={link.id}>
-            {/* <Link className="link-active" to={link.path}> onClick={()=> closeMenu()} */}
-            <a className="nav-link" href="https://github.com/ridaarif98">{link.text}</a>
-            {/* </Link> */}
-          </li>
-        ))}
-      </ul>
-    </nav>
-    
+    <div className="header">
+      <img src={image} height="60" width="60" alt="logo" />
+      <nav className="navbar">
+        <button type="button" onClick={handleToggle}>
+          {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
+        </button>
+
+        <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
+          {Links.map((link) => (
+            <li className="nav-item" key={link.id}>
+              {/* <Link className="link-active" to={link.path}> onClick={()=> closeMenu()} */}
+              <a className="nav-link" href="https://github.com/ridaarif98">{link.text}</a>
+              {/* </Link> */}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
-    
   );
 };
 

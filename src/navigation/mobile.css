@@ -36,7 +36,7 @@ div img {
   list-style: none;
   position: fixed;
   top: 0;
-  background: whitesmoke ;
+  background: whitesmoke;
   left: 0;
   bottom: 0;
   height: 100vh;
@@ -61,12 +61,12 @@ div img {
   color: black;
 }
 
+.navbar .close-icon {
+  color: black;
+}
+
 .menuNav.showMenu li:hover,
 .navbar .close-icon:hover {
   background-color: rgb(154, 226, 154);
   color: white;
-}
-
-.navbar .close-icon {
-  color: black;
 }
