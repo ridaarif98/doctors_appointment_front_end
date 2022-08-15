@@ -1,4 +1,3 @@
-import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import { ViewProvider, MyComponent } from './navigation/ViewPort';
 

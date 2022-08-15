@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './mobile.css';
 
@@ -25,24 +25,24 @@ const MobileMenu = () => {
       path: '/doctors_appoitment_front_end/',
       text: 'My Appointments',
     },
-  ]
+  ];
 
   const handleToggle = () => {
     setNavBar(!navBar);
   };
 
-  const closeMenu = () => {
-    setNavBar(false);
-  };
+  // const closeMenu = () => {
+  //   setNavBar(false);
+  // };
 
   return (
     <nav className="navbar">
-        <button onClick={handleToggle}>
-            {navBar ?
-            <i class="fa fa-close close-icon"></i> : 
-            <i class="fa fa-bars"></i>
-            }
-        </button>
+      <button type='button' onClick={handleToggle}>
+          {navBar ?
+            <i className="fa fa-close close-icon" /> : 
+            <i className="fa fa-bars" />
+          }
+      </button>
         <ul className={`menuNav ${navBar ? " showMenu" : ""}`}>
         {Links.map((link) => (
           <li class="nav-item" key={link.id}>
