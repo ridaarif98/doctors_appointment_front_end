@@ -1,0 +1,54 @@
+.navbar {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar button {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  left: 20px;
+  top: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.navbar button i {
+  font-size: 30px;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background: rgb(154, 226, 154);
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  margin-left: 0;
+  padding-left: 0;
+  overflow: hidden;
+  max-width: 100vh;
+  z-index: 9;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+  padding-top: 20vh;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.menuNav.showMenu li {
+  padding: 5px;
+  color: white;
+}
+
+.navbar .close-icon {
+  color: white;
+}
