@@ -31,7 +31,7 @@ const DesktopMenu = () => {
       <a className="navbar-brand" href="https://github.com/ridaarif98/doctors_appointment_front_end">
         <img src={image} width="80" height="80" alt="" />
       </a>
-      <ul className="nav  flex-column">
+      <ul className="nav flex-column">
         {Links.map((link) => (
           <li className="nav-item" key={link.id}>
             {/* <Link className="link-active" to={link.path}> */}
@@ -42,17 +42,17 @@ const DesktopMenu = () => {
       </ul>
       <ul className="nav-icons d-flex justify-content-start m-2">
         <li>
-          <a className="mx-2 p-1" href="https://github.com/ridaarif98">
+          <a className="mx-2 p-2" href="https://github.com/ridaarif98">
             <i className="fa fa-twitter" />
           </a>
         </li>
         <li>
-          <a className="mx-2 p-1" href="https://github.com/ridaarif98">
+          <a className="mx-2 p-2" href="https://github.com/ridaarif98">
             <i className="fa fa-facebook-f" />
           </a>
         </li>
         <li>
-          <a className="mx-2 p-1" href="https://github.com/ridaarif98">
+          <a className="mx-2 p-2" href="https://github.com/ridaarif98">
             <i className="fa fa-github" />
           </a>
         </li>

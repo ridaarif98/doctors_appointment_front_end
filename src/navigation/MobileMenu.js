@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './mobile.css';
+import image from '../images/consultation.png';
 
 const MobileMenu = () => {
   const [navBar, setNavBar] = useState(false);
@@ -35,10 +36,15 @@ const MobileMenu = () => {
   // };
 
   return (
+    <div className='header'>
+      <img src={image} height="60" width="60" />
     <nav className="navbar">
+      
       <button type="button" onClick={handleToggle}>
         {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
       </button>
+      
+      
       <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
         {Links.map((link) => (
           <li className="nav-item" key={link.id}>
@@ -49,6 +55,9 @@ const MobileMenu = () => {
         ))}
       </ul>
     </nav>
+    
+    </div>
+    
   );
 };
 
