@@ -37,11 +37,7 @@ const MobileMenu = () => {
   return (
     <nav className="navbar">
       <button type="button" onClick={handleToggle}>
-        {navBar
-        ?
-          <i className="fa fa-close close-icon" />
-          :
-          <i className="fa fa-bars" />}
+        {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
       </button>
       <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
         {Links.map((link) => (
