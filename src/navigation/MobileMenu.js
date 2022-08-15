@@ -37,17 +37,18 @@ const MobileMenu = () => {
   return (
     <nav className="navbar">
       <button type="button" onClick={handleToggle}>
-        {navBar ?
-            <i className="fa fa-close close-icon" /> :
-            <i className="fa fa-bars" />
-        }
+        {navBar
+        ?
+          <i className="fa fa-close close-icon" />
+          :
+          <i className="fa fa-bars" />}
       </button>
       <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
         {Links.map((link) => (
           <li className="nav-item" key={link.id}>
-          {/* <Link className="link-active" to={link.path}> onClick={()=> closeMenu()} */}
-            <a className="nav-link" href="#">{link.text}</a>
-          {/* </Link> */}
+            {/* <Link className="link-active" to={link.path}> onClick={()=> closeMenu()} */}
+            <a className="nav-link" href="https://github.com/ridaarif98">{link.text}</a>
+            {/* </Link> */}
           </li>
         ))}
       </ul>

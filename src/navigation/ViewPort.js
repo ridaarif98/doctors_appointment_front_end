@@ -26,7 +26,7 @@ const ViewProvider = ({ children }) => {
 };
 
 ViewProvider.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.func.isRequired,
 };
 
 const useViewPort = () => {

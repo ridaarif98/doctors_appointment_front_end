@@ -42,7 +42,7 @@ const DesktopMenu = () => {
       </ul>
       <ul className="nav-icons d-flex justify-content-start m-2">
         <li>
-          <a className="mx-2 p-1" href="https://github.com/ridaarif98" >
+          <a className="mx-2 p-1" href="https://github.com/ridaarif98">
             <i className="fa fa-twitter" />
           </a>
         </li>
@@ -58,7 +58,7 @@ const DesktopMenu = () => {
         </li>
         <li>
           <a className="mx-2 p-1" href="https://github.com/ridaarif98">
-            <i className="fa fa-linkedin"/>
+            <i className="fa fa-linkedin" />
           </a>
         </li>
       </ul>
