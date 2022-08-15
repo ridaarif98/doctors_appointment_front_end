@@ -1,0 +1,55 @@
+.sidebar {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+  width: 250px;
+}
+
+.sidebar ul {
+	margin-top: 20vh;
+}
+
+.sidebar img {
+	display: flex;
+	justify-content: left;
+	margin: 10px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+	float: left;
+	text-align: left;
+}
+
+.sidebar .nav-item a {
+	font-style: none;
+	color: black;
+	font-weight: 500;
+}
+
+.sidebar .nav-item a:hover,
+.nav-icons a:hover {
+	color: white;
+	background-color: rgb(154, 226, 154);
+}
+
+.sidebar .nav-icons {
+	list-style: none;
+	position: fixed;
+	bottom: 0px;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-icons li a {
+	text-decoration: none;
+	color: black;
+	font-size: 22px;
+}

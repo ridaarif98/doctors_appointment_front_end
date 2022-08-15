@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DesktopMenu from './DesktopMenu';
 const viewContext =  React.createContext({});
 
 const ViewProvider = ({children}) => {
@@ -28,12 +28,12 @@ const useViewPort = () => {
 };
 
 const MobileComponent = () => <p>"Hmmm... Why is your screen so small?"</p>;
-const DesktopComponent = () => <p>"Wow, your screen is big!"</p>;
+// const DesktopComponent = () => <p>"Wow, your screen is big!"</p>;
 
 const MyComponent = () => {
   const { width } = useViewPort();
   const breakpoint = 620;
-  return width < breakpoint? <MobileComponent/> : <DesktopComponent/>;
+  return width < breakpoint? <MobileComponent/> : <DesktopMenu/>;
 };
 
 export  { ViewProvider, MyComponent };
