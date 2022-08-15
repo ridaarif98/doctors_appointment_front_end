@@ -11,13 +11,14 @@
   width: 250px;
 }
 
-.sidebar ul {
-  margin-top: 20vh;
+.sidebar .nav {
+  margin-top: 30vh;
 }
 
 .sidebar img {
   display: flex;
   justify-content: left;
+  float: left;
   margin: 10px;
 }
 
@@ -30,7 +31,7 @@
 .nav-icons li a {
   text-decoration: none;
   color: black;
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .sidebar .nav-item a {
