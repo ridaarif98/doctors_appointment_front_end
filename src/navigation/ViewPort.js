@@ -28,7 +28,6 @@ const useViewPort = () => {
 };
 
 const MobileComponent = () => <p>"Hmmm... Why is your screen so small?"</p>;
-// const DesktopComponent = () => <p>"Wow, your screen is big!"</p>;
 
 const MyComponent = () => {
   const { width } = useViewPort();
