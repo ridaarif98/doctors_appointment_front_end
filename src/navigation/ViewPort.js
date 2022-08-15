@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 
@@ -22,6 +23,10 @@ const ViewProvider = ({ children }) => {
       { children }
     </viewContext.Provider>
   );
+};
+
+ViewProvider.propTypes = {
+  children: PropTypes.any,
 };
 
 const useViewPort = () => {
