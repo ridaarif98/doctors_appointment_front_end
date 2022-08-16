@@ -3,10 +3,7 @@ import Splash from './components/splash/Splash';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import './App.css';
-import { Provider } from 'react-redux';
-import store from './redux/configureStore';
 import { ViewProvider, MyComponent } from './navigation/ViewPort';
-import Doctor from './component/Doctors';
 
 function App() {
   return (
