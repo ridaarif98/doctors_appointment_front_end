@@ -20,12 +20,12 @@ export const getDoctor = () => async (dispatch) => {
 };
 
 const doctorReducer = (state = initialState, action) => {
-    switch(action.type) {
-      case FETCH_DOCTORS:
-        return [...action.payload]
-      default:
-        return state;
-    }
+  switch(action.type) {
+    case FETCH_DOCTORS:
+      return [...action.payload]
+    default:
+      return state;
+  }
 };
 
 export default doctorReducer;
