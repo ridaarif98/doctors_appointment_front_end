@@ -1,26 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/splash/Home';
+import Splash from './components/splash/Splash';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
-import { ViewProvider, MyComponent } from './navigation/ViewPort';
 import './App.css';
+import { ViewProvider, MyComponent } from './navigation/ViewPort';
 
 function App() {
   return (
     <>
       <Router>
+        <div className="App">
+          <ViewProvider>
+            <MyComponent />
+          </ViewProvider>
+        </div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Splash />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
-
-      <div className="App">
-        <ViewProvider>
-          <MyComponent />
-        </ViewProvider>
-      </div>
     </>
   );
 }
