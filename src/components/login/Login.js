@@ -41,7 +41,7 @@ const Login = () => {
 
     if (newState.status === 200) {
       setSuccess(newState.fetchedData.message);
-      navigate('/home');
+      navigate('/doctor');
     } else {
       setErrors(newState.fetchedData.error);
     }

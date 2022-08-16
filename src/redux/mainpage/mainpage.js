@@ -2,7 +2,7 @@ const FETCH_DOCTORS = 'doctors_appointment_front_end/mainpage/FETCH_DOCTORS';
 const initialState = [];
 
 export const getDoctor = () => async (dispatch) => {
-  const doctorGet = await fetch('http://[::1]:3000//api/v1/doctors');
+  const doctorGet = await fetch('http://[::1]:3001//api/v1/doctors');
   const doctorList = await doctorGet.json();
   let doctorsData = [];
   doctorsData = doctorList.data.map((doctor) => ({

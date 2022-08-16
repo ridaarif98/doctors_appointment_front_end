@@ -49,7 +49,7 @@ const Register = () => {
 
     if (newState.status === 201) {
       setSuccess(newState.fetchedData.message);
-      navigate('/home');
+      navigate('/doctor');
     } else {
       setErrors(newState.fetchedData.error);
     }
