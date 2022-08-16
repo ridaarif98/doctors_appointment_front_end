@@ -9,11 +9,11 @@ const Doctor = () => {
     dispatch(getDoctor());
   }, []);
   const doctors = useSelector((state) => state.doctorReducer);
-  console.log(doctors);
-  if (doctors) {
-    return (
-      <div className="all-doctors">
-        <h2>Doctors</h2>
+
+  return (
+    <div className="all-doctors">
+      <h2>Doctors</h2>
+      if (doctors) {
         <ul className="div list-group">
           {doctors.map((doctor) => (
             <li key={doctor.id} className="list-group-item">
@@ -23,8 +23,9 @@ const Doctor = () => {
             </li>
           ))}
         </ul>
-      </div>
-  );}
+      }
+    </div>
+  );
 };
 
 export default Doctor;
