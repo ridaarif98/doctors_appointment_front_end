@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { userLogin } from '../../redux/user/login';
+import './login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -47,12 +48,12 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <Link to="/">Home</Link>
       <h2>Login</h2>
       <p>{errors}</p>
       <p>{success}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           type="email"
           name="email"
