@@ -7,12 +7,12 @@ import './App.css';
 
 function App() {
   return (
-  <>
+    <>
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
 
@@ -21,7 +21,7 @@ function App() {
           <MyComponent />
         </ViewProvider>
       </div>
-   </> 
+    </>
   );
 }
 

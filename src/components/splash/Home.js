@@ -1,17 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
-  return (
+const Home = () => (
+  <div>
+    <h1>Doctors Appointment</h1>
     <div>
-      <h1>Doctors Appointment</h1>
-      <div>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/static">Static</Link>
-      </div>
+      <Link to="/login">Login</Link>
+      <Link to="/register">Register</Link>
+      <Link to="/static">Static</Link>
     </div>
-  )
-}
+  </div>
+);
 
 export default Home;

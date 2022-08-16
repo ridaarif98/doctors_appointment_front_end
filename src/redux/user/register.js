@@ -1,33 +1,33 @@
-import { register, initialState } from "./user";
+import { register, initialState } from './user';
+
 const REGISTER = 'USER_REGISTER';
 
-
 const registerSessionsReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case REGISTER:
-        return {
-          ...state,
-          fetchedData: action.payload.data,
-          status: action.payload.status
-        };
+      return {
+        ...state,
+        fetchedData: action.payload.data,
+        status: action.payload.status,
+      };
 
-      default:
-        return state;
+    default:
+      return state;
   }
-}
+};
 
 export const userRegisterAction = (data) => ({
   type: REGISTER,
-  payload: data
+  payload: data,
 });
 
-export const userRegister = (name, email, password, password_confirmation ) => async (dispatch) => {
+export const userRegister = (name, email, password, passwordConfirmation) => async (dispatch) => {
   try {
-    const data = await register(name, email, password, password_confirmation)
-    dispatch(userRegisterAction(data))
-  } catch (e){
-    dispatch(userRegisterAction(e.response))
+    const data = await register(name, email, password, passwordConfirmation);
+    dispatch(userRegisterAction(data));
+  } catch (e) {
+    dispatch(userRegisterAction(e.response));
   }
-}
+};
 
 export default registerSessionsReducer;
