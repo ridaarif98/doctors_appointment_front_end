@@ -4,7 +4,6 @@ const initialState = [];
 export const getDoctor = () => async (dispatch) => {
   const doctorGet = await fetch('http://[::1]:3000//api/v1/doctors');
   const doctorList = await doctorGet.json();
-  console.log(doctorList)
   let doctorsData = [];
   doctorsData = doctorList.data.map((doctor) => ({
     id: doctor.id,
@@ -14,15 +13,15 @@ export const getDoctor = () => async (dispatch) => {
   }));
 
   dispatch({
-    type:  FETCH_DOCTORS,
+    type: FETCH_DOCTORS,
     payload: doctorsData,
   });
 };
 
 const doctorReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case FETCH_DOCTORS:
-      return [...action.payload]
+      return [...action.payload];
     default:
       return state;
   }

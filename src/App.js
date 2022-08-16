@@ -8,7 +8,7 @@ function App() {
   return (
     <Provider store={store}>
       <ViewProvider>
-        <MyComponent /> 
+        <MyComponent />
       </ViewProvider>
       <Doctor />
     </Provider>
