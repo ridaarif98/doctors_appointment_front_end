@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { userRegister } from '../../redux/user/register';
+import './register.css';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -55,12 +56,12 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="register-container">
       <Link to="/">Home</Link>
       <h2>Register</h2>
       <p>{errors}</p>
       <p>{success}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="register-form">
         <input
           type="text"
           name="name"
