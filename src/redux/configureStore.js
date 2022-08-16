@@ -6,6 +6,7 @@ import registerSessionsReducer from './user/register';
 const rootReducer = combineReducers({
   loginSessionsReducer,
   registerSessionsReducer,
+  doctorReducer,
 });
 
 const store = configureStore({
