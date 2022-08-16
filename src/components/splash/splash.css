@@ -1,0 +1,7 @@
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 2rem;
+}

@@ -1,12 +1,20 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import doctorReducer from './mainpage/mainpage';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import loginSessionsReducer from './user/login';
+import registerSessionsReducer from './user/register';
 
-const reducer = combineReducers({
-  doctorReducer,
+const rootReducer = combineReducers({
+  loginSessionsReducer,
+  registerSessionsReducer,
 });
 
-const store = createStore(reducer, applyMiddleware(logger, thunk));
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: [
+    ...getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+  ],
+});
 
 export default store;
