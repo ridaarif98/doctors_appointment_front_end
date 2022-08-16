@@ -9,12 +9,12 @@ const Doctor = () => {
     dispatch(getDoctor());
   }, []);
   const doctors = useSelector((state) => state.doctorReducer);
-  
+
   return (
     <div className="all-doctors">
       <h2>Doctors</h2>
       <ul className="div list-group">
-        {doctors.length >0 && doctors.map((doctor) => (
+        {doctors.length > 0 && doctors.map((doctor) => (
           <li key={doctor.id} className="list-group-item">
             {doctor.name}
             <p>{doctor.details}</p>
