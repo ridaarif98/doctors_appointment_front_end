@@ -1,3 +1,29 @@
-.test {
-  margin-left: 400px;
+.formSet {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  height: 100vh;
+  align-items: center;
+}
+
+.formSet form {
+  margin-top: 5vh;
+}
+
+.formSet input,
+.formSet select {
+  width: 60vw;
+  border-radius: 70px;
+}
+
+.formSet .bt-submit {
+  background-color: rgb(154, 226, 154);
+  border: none;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 620px) {
+  .formSet {
+    margin: 20px;
+  }
 }

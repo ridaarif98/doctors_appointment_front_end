@@ -6,7 +6,7 @@ export const initialState = {
   status: '',
 };
 
-export const createAppointment = async ( city, appointmentTime, doctorId) => {
+export const createAppointment = async (city, appointmentTime, doctorId) => {
   const data = await axios({
     method: 'POST',
     url: 'http://localhost:3001/api/v1/appointments',
@@ -26,10 +26,10 @@ export const appointmentAction = (data) => ({
 
 export const userAppointment = (city, appointmentTime, doctorId) => async (dispatch) => {
   // try {
-    console.log(city,appointmentTime,doctorId)
-    const data = await createAppointment(city, appointmentTime, doctorId);
-    console.log(data)
-    dispatch(appointmentAction(data));
+  console.log(city, appointmentTime, doctorId);
+  const data = await createAppointment(city, appointmentTime, doctorId);
+  console.log(data);
+  dispatch(appointmentAction(data));
   // } catch (e) {
   //   dispatch(userRegisterAction(e.response));
   // }
