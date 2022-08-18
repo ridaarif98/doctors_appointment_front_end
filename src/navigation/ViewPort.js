@@ -36,7 +36,7 @@ const useViewPort = () => {
 
 const MyComponent = () => {
   const { width } = useViewPort();
-  const breakpoint = 620;
+  const breakpoint = 768;
   return width < breakpoint ? <MobileMenu /> : <DesktopMenu />;
 };
 

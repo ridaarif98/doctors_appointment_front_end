@@ -18,7 +18,7 @@ const MobileMenu = () => {
     },
     {
       id: 2,
-      path: '/doctors_appointment_front_end/',
+      path: '/doctors',
       text: 'Doctors',
     },
     {
@@ -30,6 +30,11 @@ const MobileMenu = () => {
       id: 4,
       path: '/doctors_appoitment_front_end/',
       text: 'My Appointments',
+    },
+    {
+      id: 'logout-btn',
+      path: '/login',
+      text: 'Logout',
     },
   ];
 

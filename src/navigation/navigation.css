@@ -1,5 +1,7 @@
 .sidebar {
   position: fixed;
+  justify-content: center;
+  align-items:center;
   top: 0;
   bottom: 0;
   left: 0;
@@ -8,49 +10,73 @@
   overflow-x: hidden;
   overflow-y: auto;
   border-right: 1px solid #eee;
-  width: 250px;
+  width: 180px;
 }
 
-.sidebar .nav {
-  margin-top: 30vh;
+.nav {
+  margin: 0;
+  position: fixed;
+  top: 40%;
+  display: flex;
+  gap: 5px;
+}
+
+.nav-item {
+ width: 179px;
+ padding: 8px;
+}
+
+.nav-item:hover {
+  background-color: greenYellow;
+}
+
+.nav-item a{
+ text-decoration: none;
+ color: black;
+ font-size: 1.2rem;
+ font-weight: bold;
+ padding-left: 20px;
+ padding-right: 30px;
 }
 
 .sidebar img {
-  display: flex;
-  justify-content: left;
-  float: left;
-  margin: 10px;
+   postion: fixed;
+   left:55px;
 }
 
-.sidebar .nav-item {
-  width: 100%;
-  float: left;
-  text-align: left;
+.nav-icons {
+  position: fixed;
+  bottom: 0;
+  left: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 0 0 10px!important;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+.nav-icons li {
+  background-color: white;
+  border-radius: 50%;
+  padding: 8px 5px;
 }
 
 .nav-icons li a {
   text-decoration: none;
-  color: black;
-  font-size: 25px;
+  color: blue;
+  font-size: 17px;
+  text-align: center;
+  margin: 0px !important;
 }
 
-.sidebar .nav-item a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
+.nav-icons li:hover {
+  background-color: blue;
 }
 
-.nav-icons a:hover,
-.sidebar .nav-item a:hover {
+.nav-icons li a:hover {
   color: white;
-  background-color: rgb(154, 226, 154);
 }
 
-.sidebar .nav-icons {
-  list-style: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-}

@@ -1,5 +1,7 @@
 div img {
-  float: right;
+  position: fixed;
+  left: 80%;
+  top: 0;
   margin-right: 20px;
   margin-top: 15px;
 }
