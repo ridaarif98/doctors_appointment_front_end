@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { userLogin } from '../../redux/user/login';
+import { userLogin } from '../../redux/user/register-login';
 import './login.css';
 
 const Login = () => {
@@ -13,7 +13,16 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const newState = useSelector((state) => state.loginSessionsReducer);
+  const newState = useSelector((state) => state.sessionsReducer);
+
+  useEffect(() => {
+    if (newState.status === 200) {
+      navigate('/doctors');
+      setSuccess(newState.fetchedData.message);
+    } else if (newState.status !== 200 && newState.status !== '') {
+      setErrors(newState.fetchedData.error);
+    }
+  }, []);
 
   const handleChange = (e) => {
     const input = e.target;
@@ -38,13 +47,7 @@ const Login = () => {
     form.reset();
 
     dispatch(userLogin(email, password));
-
-    if (newState.status === 200) {
-      setSuccess(newState.fetchedData.message);
-      navigate('/doctors');
-    } else {
-      setErrors(newState.fetchedData.error);
-    }
+    // navigate('/doctors');
   };
 
   return (
