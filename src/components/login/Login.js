@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { userLogin } from '../../redux/user/login';
 import './login.css';
 
@@ -41,41 +41,43 @@ const Login = () => {
 
     if (newState.status === 200) {
       setSuccess(newState.fetchedData.message);
-      navigate('/doctor');
+      navigate('/doctors');
     } else {
       setErrors(newState.fetchedData.error);
     }
   };
 
   return (
-    <div className="login-container">
-      <Link to="/">Home</Link>
-      <h2>Login</h2>
-      <p>{errors}</p>
-      <p>{success}</p>
-      <form onSubmit={handleSubmit} className="login-form">
-        <input
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Enter your email"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="submit"
-          value="Login"
-        />
-      </form>
-    </div>
+    <section className="login-section">
+      <div className="login-container">
+        <h2 className="login-title">Login</h2>
+        <p>{errors}</p>
+        <p>{success}</p>
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="email"
+            name="email"
+            value={email}
+            placeholder="Enter your email"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="submit"
+            value="Login"
+            id="form-submit"
+          />
+        </form>
+      </div>
+    </section>
   );
 };
 
