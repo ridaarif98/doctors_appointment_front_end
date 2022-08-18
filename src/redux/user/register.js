@@ -1,4 +1,4 @@
-import { register, initialState } from './user';
+import { register, initialState, LOGOUT } from './user';
 
 const REGISTER = 'USER_REGISTER';
 
@@ -10,6 +10,9 @@ const registerSessionsReducer = (state = initialState, action) => {
         fetchedData: action.payload.data,
         status: action.payload.status,
       };
+
+    case LOGOUT:
+      return state;
 
     default:
       return state;

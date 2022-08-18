@@ -3,6 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:3001/api';
 const REGISTER_URL = 'register';
 const LOGIN_URL = 'login';
+const LOGOUT = 'userLogOut';
 
 export const register = async (name, email, password, passwordConfirmation) => {
   const data = await axios({
@@ -35,3 +36,9 @@ export const initialState = {
   fetchedData: '',
   status: '',
 };
+
+export const userLogOutAction = () => ({
+  type: LOGOUT,
+});
+
+export { LOGOUT };

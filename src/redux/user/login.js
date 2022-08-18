@@ -1,4 +1,4 @@
-import { login, initialState } from './user';
+import { login, initialState, LOGOUT } from './user';
 
 const LOGIN = 'USER_LOGIN';
 
@@ -10,6 +10,9 @@ const loginSessionsReducer = (state = initialState, action) => {
         fetchedData: action.payload.data,
         status: action.payload.status,
       };
+
+    case LOGOUT:
+      return state;
 
     default:
       return state;
