@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   top: 0;
   bottom: 0;
   left: 0;
@@ -22,36 +22,35 @@
 }
 
 .nav-item {
- width: 179px;
- padding: 8px;
+  width: 179px;
+  padding: 8px;
 }
 
 .nav-item:hover {
-  background-color: greenYellow;
+  background-color: greenyellow;
 }
 
-.nav-item a{
- text-decoration: none;
- color: black;
- font-size: 1.2rem;
- font-weight: bold;
- padding-left: 20px;
- padding-right: 30px;
+.nav-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 30px;
 }
 
 .sidebar img {
-   postion: fixed;
-   left:55px;
+  position: fixed;
+  left: 35px;
 }
 
 .nav-icons {
   position: fixed;
   bottom: 0;
   left: 5px;
-  margin: 0;
   padding: 0;
   list-style: none;
-  margin: 0 0 10px!important;
+  margin: 0 0 10px !important;
   display: flex;
   gap: 5px;
   justify-content: space-between !important;
@@ -69,7 +68,7 @@
   color: blue;
   font-size: 17px;
   text-align: center;
-  margin: 0px !important;
+  margin: 0 !important;
 }
 
 .nav-icons li:hover {
@@ -79,4 +78,3 @@
 .nav-icons li a:hover {
   color: white;
 }
-
