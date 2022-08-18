@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { userRegister } from '../../redux/user/register';
 import './register.css';
 
@@ -49,54 +49,55 @@ const Register = () => {
 
     if (newState.status === 201) {
       setSuccess(newState.fetchedData.message);
-      navigate('/doctor');
+      navigate('/doctors');
     } else {
       setErrors(newState.fetchedData.error);
     }
   };
 
   return (
-    <div className="register-container">
-      <Link to="/">Home</Link>
-      <h2>Register</h2>
-      <p>{errors}</p>
-      <p>{success}</p>
-      <form onSubmit={handleSubmit} className="register-form">
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Enter your email"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="confirmPassword"
-          value={confirmPassword}
-          placeholder="confirm your password"
-          onChange={handleChange}
-          required
-        />
-        <input type="submit" value="Register" />
-      </form>
-    </div>
+    <section className="register-section">
+      <div className="register-container">
+        <h2 className="register-title">Register</h2>
+        <p>{errors}</p>
+        <p>{success}</p>
+        <form onSubmit={handleSubmit} className="register-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            placeholder="Enter your email"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="confirmPassword"
+            value={confirmPassword}
+            placeholder="confirm your password"
+            onChange={handleChange}
+            required
+          />
+          <input type="submit" value="Register" id="form-submit" />
+        </form>
+      </div>
+    </section>
   );
 };
 
