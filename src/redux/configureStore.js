@@ -4,8 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import {
   persistReducer,
 } from 'redux-persist';
-import loginSessionsReducer from './user/login';
-import registerSessionsReducer from './user/register';
+import sessionsReducer from './user/register-login';
 import doctorReducer from './mainpage/mainpage';
 
 const persistConfig = {
@@ -14,8 +13,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  loginSessionsReducer,
-  registerSessionsReducer,
+  sessionsReducer,
   doctorReducer,
 });
 
