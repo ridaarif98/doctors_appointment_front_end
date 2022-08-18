@@ -1,12 +1,12 @@
 .register-section {
   background-image: url("../../images/doctor-background.jpg");
-  background-size: cover ;
+  background-size: cover;
   height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .register-container {
   background-color: rgba(235, 245, 255, 0.9);

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { userRegister } from '../../redux/user/register';
+import { userRegister } from '../../redux/user/register-login';
 import './register.css';
 
 const Register = () => {
@@ -12,10 +12,19 @@ const Register = () => {
   const [errors, setErrors] = useState('');
   const [success, setSuccess] = useState('');
 
-  const newState = useSelector((state) => state.registerSessionsReducer);
+  const newState = useSelector((state) => state.sessionsReducer);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (newState.status === 201) {
+      navigate('/doctors');
+      setSuccess(newState.fetchedData.message);
+    } else if (newState.status !== 201 && newState.status !== '') {
+      setErrors(newState.fetchedData.error);
+    }
+  }, []);
 
   const handleChange = (e) => {
     const input = e.target;
@@ -46,13 +55,6 @@ const Register = () => {
     e.preventDefault();
     form.reset();
     dispatch(userRegister(name, email, password, confirmPassword));
-
-    if (newState.status === 201) {
-      setSuccess(newState.fetchedData.message);
-      navigate('/doctors');
-    } else {
-      setErrors(newState.fetchedData.error);
-    }
   };
 
   return (
