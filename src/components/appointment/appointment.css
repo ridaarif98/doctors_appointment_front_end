@@ -1,0 +1,64 @@
+.formSet {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  height: 100vh;
+  background-color: rgb(154, 226, 154);
+  align-items: center;
+}
+
+.formSet h3 {
+  color: white;
+}
+
+.formSet form {
+  margin-top: 5vh;
+}
+
+.formSet .form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.formSet input,
+.formSet select {
+  height: 8vh;
+  width: 25vw;
+  border-radius: 70px;
+  background-color: inherit;
+  border: 1px solid white;
+  color: white;
+}
+
+.text {
+  color: gray;
+}
+
+.formSet .bt-submit {
+  background-color: white;
+  color: rgb(154, 226, 154);
+  border: 1px solid white;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 620px) {
+  .formSet {
+    margin: 0;
+    height: 100vh;
+  }
+
+  .formSet .form-row {
+    display: flex;
+    flex-direction: column;
+    line-height: 10vh;
+  }
+
+  .formSet input,
+  .formSet select {
+    /* width: 30vw; */
+    height: 8vh;
+    width: 70vw;
+    border-radius: 70px;
+  }
+}

@@ -42,6 +42,16 @@ const DesktopMenu = () => {
       path: '/register',
       text: 'Register',
     },
+    {
+      id: 3,
+      path: '/doctor',
+      text: 'All-Doctor',
+    },
+    {
+      id: 4,
+      path: '/book_appointment',
+      text: 'Book_appointment',
+    },
   ];
 
   return (
