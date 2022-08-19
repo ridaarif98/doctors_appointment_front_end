@@ -11,22 +11,22 @@ const DesktopMenu = () => {
   const Links = [
     {
       id: 1,
-      path: '/doctors_appointment_front_end/',
+      path: '/doctors',
       text: 'Home',
     },
     {
       id: 2,
-      path: '/doctors_appointment_front_end/',
+      path: '/doctors',
       text: 'Doctors',
     },
     {
       id: 3,
-      path: '/doctors_appointment_front_end/',
+      path: '/doctors',
       text: 'Appointment',
     },
     {
       id: 4,
-      path: '/doctors_appoitment_front_end/',
+      path: '/',
       text: 'My Appointments',
     },
   ];
