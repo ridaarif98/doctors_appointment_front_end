@@ -1,3 +1,31 @@
 .all-doctors {
   margin-left: 300px;
 }
+
+.all-doctors h2 {
+  text-align: center;
+  margin: 10vh 0;
+  font-weight: 600;
+}
+
+.dctr-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.dctr-list li {
+  width: 23vw;
+  margin: 20px 10px;
+  border: none;
+}
+
+.dctr-list li img {
+  height: 20vh;
+  border-radius: 50%;
+}
+
+.dctr-list li a {
+  text-decoration: none;
+  color: gray;
+  font-size: 22px;
+}
