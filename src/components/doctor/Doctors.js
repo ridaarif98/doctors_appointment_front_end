@@ -5,10 +5,11 @@ import './doctor.css';
 
 const Doctor = () => {
   const dispatch = useDispatch();
+  const doctors = useSelector((state) => state.doctorReducer);
+
   useEffect(() => {
     dispatch(getDoctor());
-  }, []);
-  const doctors = useSelector((state) => state.doctorReducer);
+  }, [doctors]);
 
   return (
     <div className="all-doctors">

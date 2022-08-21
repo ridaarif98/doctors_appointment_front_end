@@ -29,7 +29,7 @@ const DesktopMenu = () => {
     },
     {
       id: 4,
-      path: '/doctors_appoitment_front_end/',
+      path: '/appointments',
       text: 'Mi-Appointments',
     },
   ];
