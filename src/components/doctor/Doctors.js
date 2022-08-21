@@ -46,53 +46,55 @@ const Doctor = () => {
   return (
 
     <div className="all-doctors">
-      <h2>Doctors</h2>
-      {/* <ul className="dctr-list"> */}
-      
-        <Slider {...settings}>
-          {doctors.length > 0 && doctors.map((doctor) => (
-            <div key={doctor.id} className="doctor">
-              <img src={image} alt="doctor" className="card-img-top" />
-              <h5 className="card-title">
-                {doctor.name}
-              </h5>
-              <p className="card-text text-muted">{doctor.details}</p>
-              <p className="d-flex text-center justify-content-center">
-                <a className="p-2" href="https://github.com/ridaarif98">
-                  <i className="fa fa-twitter" />
-                </a>
-                <a className="p-2" href="https://github.com/ridaarif98">
-                  <i className="fa fa-facebook-f" />
-                </a>
-                <a className="p-2" href="https://github.com/ridaarif98">
-                  <i className="fa fa-linkedin" />
-                </a>
-              </p>
-
+      <h1>Doctors</h1>
+      <Slider {...settings}>
+        {doctors.length > 0 && doctors.map((doctor) => (
+          <div key={doctor.id} className="doctor">
+            <div className="doctor-image">
+            <img src={image} alt="doctor" className="card-img-top" />
             </div>
-           
-           // <li key={doctor.id} className="card text-center">
-           
-           //   <img src={image} alt="doctor" className="card-img-top" />
-            //   <h5 className="card-title mt-5">
-            //     {' '}
-            //     {doctor.name}
-            //   </h5>
-            //   <p className="card-text text-muted">{doctor.details}</p>
-            //   <p className="d-flex text-center justify-content-center">
-            //     <a className="p-2" href="https://github.com/ridaarif98">
-            //       <i className="fa fa-twitter" />
-            //     </a>
-            //     <a className="p-2" href="https://github.com/ridaarif98">
-            //       <i className="fa fa-facebook-f" />
-            //     </a>
-            //     <a className="p-2" href="https://github.com/ridaarif98">
-            //       <i className="fa fa-linkedin" />
-            //     </a>
-            //   </p>
-            // </li>
-          ))}
-          {/* <li className="card text-center">
+            <div className='doctor-info'>
+            <h4>
+              {doctor.name}
+            </h4>
+            <p className="h5 text-muted">. . . . . . . . .</p>
+            <p className="card-text text-muted">{doctor.details}</p>
+            <p className="d-flex text-center justify-content-center">
+              <a className="p-2" href="https://github.com/ridaarif98">
+                <i className="fa fa-twitter" />
+              </a>
+              <a className="p-2" href="https://github.com/ridaarif98">
+                <i className="fa fa-facebook-f" />
+              </a>
+              <a className="p-2" href="https://github.com/ridaarif98">
+                <i className="fa fa-linkedin" />
+              </a>
+            </p>
+            </div>
+          </div>
+
+          // <li key={doctor.id} className="card text-center">
+
+          //   <img src={image} alt="doctor" className="card-img-top" />
+          //   <h5 className="card-title mt-5">
+          //     {' '}
+          //     {doctor.name}
+          //   </h5>
+          //   <p className="card-text text-muted">{doctor.details}</p>
+          //   <p className="d-flex text-center justify-content-center">
+          //     <a className="p-2" href="https://github.com/ridaarif98">
+          //       <i className="fa fa-twitter" />
+          //     </a>
+          //     <a className="p-2" href="https://github.com/ridaarif98">
+          //       <i className="fa fa-facebook-f" />
+          //     </a>
+          //     <a className="p-2" href="https://github.com/ridaarif98">
+          //       <i className="fa fa-linkedin" />
+          //     </a>
+          //   </p>
+          // </li>
+        ))}
+        {/* <li className="card text-center">
             <img src={image} alt="doctor" />
             <h5 className="card-title"> TEst</h5>
 
@@ -106,8 +108,8 @@ const Doctor = () => {
             <p className="card-text text-muted">bnbnbnbnbnbnbnbnbnbn</p>
 
           </li> */}
-       
-        </Slider>
+
+      </Slider>
       {/* </ul> */}
     </div>
   );

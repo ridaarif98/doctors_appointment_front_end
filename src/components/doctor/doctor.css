@@ -4,35 +4,47 @@
   margin-bottom: 10vh;
 }
 
-.all-doctors h2 {
+.all-doctors h1 {
   text-align: center;
-  margin: 10vh 0;
-  font-weight: 600;
+  margin: 5vh 0;
+  font-weight: bold;
 }
 
-.dctr-list .doctor {
+.doctor {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 15vw;
-  padding: 10px;
-  text-align: center;
-  margin: 20px 20px;
-  border: none;
+  padding: 20px;
+  margin: 20px;
 }
 
-.doctor img {
+.doctor-image {
   display: flex;
-  height: 15vh;
-  margin-left: 0;
-  width: 15vw;
-  border: 1px solid blue;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.doctor-image img {
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 95%;
   border-radius: 50%;
+}
+
+.doctor .doctor-info {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.doctor h5 {
+.doctor .doctor-info h4,
+.doctor .doctor-info p {
   display: flex;
-  margin-top: 20vh;
   text-align: center;
   justify-content: center;
 }
