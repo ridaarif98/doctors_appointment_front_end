@@ -22,7 +22,7 @@ const Login = () => {
     } else if (newState.status !== 200 && newState.status !== '') {
       setErrors(newState.fetchedData.error);
     }
-  }, []);
+  }, [newState]);
 
   const handleChange = (e) => {
     const input = e.target;
