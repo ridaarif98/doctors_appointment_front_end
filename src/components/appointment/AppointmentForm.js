@@ -9,6 +9,7 @@ const AppointmentForm = () => {
   const [doctorId, setId] = useState('');
 
   const doctors = useSelector((state) => state.doctorReducer);
+  const activeUser = useSelector((state) => state.sessionsReducer.fetchedData.user);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -33,7 +34,7 @@ const AppointmentForm = () => {
     const formTarget = e.target;
     e.preventDefault();
     formTarget.reset();
-    dispatch(userAppointment(city, appointmenTime, doctorId));
+    dispatch(userAppointment(city, appointmenTime, doctorId, activeUser.id));
     setCity('');
     setTime('');
     setId('');

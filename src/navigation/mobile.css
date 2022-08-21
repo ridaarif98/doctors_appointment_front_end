@@ -1,5 +1,7 @@
 div img {
-  float: right;
+  position: fixed;
+  left: 80%;
+  top: 0;
   margin-right: 20px;
   margin-top: 15px;
 }
@@ -39,25 +41,29 @@ div img {
   background: whitesmoke;
   left: 0;
   bottom: 0;
-  height: 100vh;
   width: 0;
   margin-left: 0;
   padding-left: 0;
   overflow: hidden;
-  max-width: 100vw;
   z-index: 9;
 }
 
 .menuNav.showMenu {
-  width: 100%;
-  padding-top: 30vh;
+  width: 50%;
   font-size: 25px;
   font-weight: 500;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 0;
 }
 
 .menuNav.showMenu li {
-  padding: 8px;
   color: black;
 }
 
@@ -65,8 +71,34 @@ div img {
   color: black;
 }
 
+.menuNav li:nth-child(3) {
+  margin-bottom: 40vh;
+}
+
 .menuNav.showMenu li:hover,
 .navbar .close-icon:hover {
   background-color: rgb(154, 226, 154);
   color: white;
+}
+
+.logout-button-mobile {
+  align-self: start;
+  margin-left: 20px;
+}
+
+.logout-button-mobile a {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  width: 150px;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.logout-button-mobile a:hover {
+  color: white;
+  background-color: red;
 }

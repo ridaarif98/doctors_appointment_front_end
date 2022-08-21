@@ -1,12 +1,47 @@
-.login-container {
+.login-section {
+  background-image: url("../../images/doctor-background.jpg");
+  background-size: cover;
+  height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
 
+.login-container {
+  background-color: rgba(235, 245, 255, 0.9);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.login-title {
+  text-align: center;
+  color: blue;
+}
+
 .login-form {
   display: flex;
   flex-flow: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+form input {
+  padding: 10px;
+  border: 1px hidden;
+  border-radius: 5px;
+}
+
+#form-submit {
+  padding: 6px 20px;
+  background-color: white;
+  color: #77b5fe;
+}
+
+#form-submit:hover {
+  background-color: #77b5fe;
+  color: white;
 }
