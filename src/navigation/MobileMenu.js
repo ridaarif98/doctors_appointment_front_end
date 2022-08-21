@@ -14,29 +14,19 @@ const MobileMenu = () => {
   const [navBar, setNavBar] = useState(false);
   const Links = [
     {
-      id: 1,
-      path: '/doctors_appointment_front_end/',
-      text: 'Home',
-    },
-    {
-      id: 2,
+      id: 'doctors-link',
       path: '/doctors',
-      text: 'Doctors',
+      text: 'All-Doctor',
     },
     {
-      id: 3,
-      path: '/doctors_appointment_front_end/',
-      text: 'Appointment',
+      id: 'book_appointment-link',
+      path: '/book_appointment',
+      text: 'Book_appointment',
     },
     {
-      id: 4,
+      id: 'Mi-Appointments-link',
       path: '/doctors_appoitment_front_end/',
       text: 'Mi-Appointments',
-    },
-    {
-      id: 'logout-btn',
-      path: '/login',
-      text: 'Logout',
     },
   ];
 
@@ -58,53 +48,72 @@ const MobileMenu = () => {
   ];
 
   const handleLogout = () => {
-    dispatch(userLogOutAction);
+    dispatch(userLogOutAction());
+    handleToggle();
     navigate('/login');
   };
-
-  // const closeMenu = () => {
-  //   setNavBar(false);
-  // };
 
   return (
     <div className="header">
       <img src={image} height="60" width="60" alt="logo" />
       <>
-        {
-        userStatus === 200 || userStatus === 201 ? (
+        {userStatus === 200 || userStatus === 201 ? (
           <nav className="navbar">
             <button type="button" onClick={handleToggle}>
-              {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
+              {navBar ? (
+                <i className="fa fa-close close-icon" />
+              ) : (
+                <i className="fa fa-bars" />
+              )}
             </button>
-            <button type="button" onClick={handleLogout} className="logout-button">Logout</button>
             <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
               {Links.map((link) => (
                 <li className="nav-item" key={link.id}>
-                  <Link className="link-active" to={link.path} onClick={handleToggle}>
+                  <Link
+                    className="link-active"
+                    to={link.path}
+                    onClick={handleToggle}
+                  >
                     {link.text}
                   </Link>
                 </li>
               ))}
+              <li className="logout-button-mobile">
+                <Link
+                  className="link-active"
+                  to="/login"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Link>
+              </li>
             </ul>
           </nav>
         ) : (
           <nav className="navbar">
             <button type="button" onClick={handleToggle}>
-              {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
+              {navBar ? (
+                <i className="fa fa-close close-icon" />
+              ) : (
+                <i className="fa fa-bars" />
+              )}
             </button>
 
             <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
               {splashLinks.map((link) => (
                 <li className="nav-item" key={link.id}>
-                  <Link className="link-active" to={link.path}>
+                  <Link
+                    className="link-active"
+                    to={link.path}
+                    onClick={handleToggle}
+                  >
                     {link.text}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
-        )
-       }
+        )}
       </>
     </div>
   );
