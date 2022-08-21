@@ -52,6 +52,11 @@ const DesktopMenu = () => {
       path: '/book_appointment',
       text: 'Book_appointment',
     },
+    {
+      id: 5,
+      path: '/test',
+      text: 'Test',
+    },
   ];
 
   return (

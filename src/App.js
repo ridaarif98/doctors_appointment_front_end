@@ -9,6 +9,7 @@ import AppointmentForm from './components/appointment/AppointmentForm';
 import './App.css';
 import { ViewProvider, MyComponent } from './navigation/ViewPort';
 import { getDoctor } from './redux/mainpage/mainpage';
+// import Test from './components/carousel/Test';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/doctor" element={<Doctor />} />
+          {/* <Route path="/test" element={<Test />} /> */}
           <Route path="/book_appointment" element={<AppointmentForm />} />
         </Routes>
       </Router>
