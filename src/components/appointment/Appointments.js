@@ -1,57 +1,52 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAppointments, deleteAppointmentAction } from '../../redux/appointment/appointment';
+import { deleteAppointmentAction, getAppointments } from '../../redux/appointment/appointment';
 
 const Appointments = () => {
+  const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const activeUser = useSelector((state) => state.sessionsReducer.fetchedData.user);
+  const doctors = useSelector((state) => state.doctorReducer);
   const allAppointments = useSelector((state) => state.appointmentReducer.allAppointments);
-  console.log(allAppointments);
-
-  const ownAppoitments = () => {
-    const results = [];
-    if (allAppointments.length === 0) {
-      allAppointments.map((apt) => {
-        if (apt.user_id === activeUser.id) {
-          results.push(apt);
-        }
-        return null;
-      });
-    }
-    return results;
-  };
 
   useEffect(() => {
     dispatch(getAppointments());
-    ownAppoitments();
-  }, []);
+    setData([...allAppointments]);
+  }, [allAppointments]);
 
   const handleDelete = (id) => {
     dispatch(deleteAppointmentAction(id));
   };
 
-  const myAppointments = ownAppoitments();
-  console.log(myAppointments);
-
   return (
     <section className="appointments-container">
-      <h1>{activeUser.name}</h1>
       {
-      myAppointments.length === 0 ? (
+      data.length === 0 ? (
         <div>
-          <h2>No Appointments Available</h2>
+          <h2 className="title">MY APPOINTMENTS</h2>
+          <h4>No Appointments Available</h4>
         </div>
       ) : (
         <>
-          <ul>
+          <ul className="my-appointments">
+            <li className="title">MY APPOINTMENTS</li>
             {
-              myAppointments.map((apt) => (
-                <li key={apt.id}>
-                  <h3>{apt.city}</h3>
-                  <h3>{apt.time}</h3>
-                  <button type="button" onClick={() => handleDelete(apt.id)}>Delete</button>
+              data.map((apt) => (apt.user_id === activeUser.id ? (
+                <li key={apt.id} className="appointment">
+                  <div>
+                    <h4>
+                      Dr
+                      {' '}
+                      {doctors.filter((doctor) => doctor.id === apt.doctor_id).map(
+                        (doc) => doc.name,
+                      )}
+                    </h4>
+                    <p>{apt.city}</p>
+                  </div>
+                  <p>{apt.appointment_time.substr(0, 10)}</p>
+                  <button type="button" onClick={() => handleDelete(apt.id)} className="appointment-btn">Delete</button>
                 </li>
-              ))
+              ) : null))
             }
           </ul>
         </>
