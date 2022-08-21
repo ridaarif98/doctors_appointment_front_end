@@ -42,6 +42,10 @@
   font-weight: 600;
 }
 
+.appointments-container {
+  margin-left: 300px;
+}
+
 @media only screen and (max-width: 620px) {
   .formSet {
     margin: 0;
