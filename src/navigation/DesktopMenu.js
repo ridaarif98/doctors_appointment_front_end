@@ -10,21 +10,22 @@ const DesktopMenu = () => {
   const navigate = useNavigate();
   const newState = useSelector((state) => state);
   const userStatus = newState.sessionsReducer.status;
+
   const Links = [
     {
       id: 1,
-      path: '/doctors_appointment_front_end/',
-      text: 'Home',
-    },
-    {
-      id: 2,
       path: '/doctors',
       text: 'Doctors',
     },
     {
+      id: 2,
+      path: '/doctors',
+      text: 'All-Doctor',
+    },
+    {
       id: 3,
-      path: '/doctors_appointment_front_end/',
-      text: 'Appointment',
+      path: '/book_appointment',
+      text: 'Book_appointment',
     },
     {
       id: 4,
@@ -43,16 +44,6 @@ const DesktopMenu = () => {
       id: 2,
       path: '/register',
       text: 'Register',
-    },
-    {
-      id: 3,
-      path: '/doctor',
-      text: 'All-Doctor',
-    },
-    {
-      id: 4,
-      path: '/book_appointment',
-      text: 'Book_appointment',
     },
   ];
 
@@ -100,7 +91,7 @@ const DesktopMenu = () => {
                 </a>
               </li>
             </ul>
-            <button type="button" onClick={handleLogout} className="logout-button">Logout</button>
+            <button type="button" onClick={handleLogout} className="logout-button-desktop">Logout</button>
           </nav>
         ) : (
           <nav className="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
