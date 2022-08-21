@@ -53,7 +53,7 @@ export const userAppointment = (city, appointmentTime, doctorId, user) => async 
 export const deleteAppointmentAction = (appointment) => async (dispatch) => {
   const data = await deleteAppointment(appointment);
   dispatch({
-    type: GET_APPOINTMENTS,
+    type: DELETE_APPOINTMENT,
     payload: data,
   });
 };
@@ -76,7 +76,8 @@ const appointmentReducer = (state = initialState, action) => {
     case DELETE_APPOINTMENT:
       return {
         ...state,
-        fethedData: action.payload,
+        fetchedData: action.payload,
+        allAppointments: state.allAppointments.filter((apt) => apt.id !== action.data),
       };
 
     default:
