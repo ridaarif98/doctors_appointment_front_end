@@ -78,3 +78,20 @@
 .nav-icons li a:hover {
   color: white;
 }
+
+.logout-button-desktop {
+  position: fixed;
+  top: 85vh;
+  left: 30px;
+  padding: 5px 25px;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.logout-button-desktop:hover {
+  background-color: red;
+  color: white;
+}
