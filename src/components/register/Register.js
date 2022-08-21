@@ -24,7 +24,7 @@ const Register = () => {
     } else if (newState.status !== 201 && newState.status !== '') {
       setErrors(newState.fetchedData.error);
     }
-  }, []);
+  }, [newState]);
 
   const handleChange = (e) => {
     const input = e.target;
