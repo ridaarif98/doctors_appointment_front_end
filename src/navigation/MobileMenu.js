@@ -1,35 +1,32 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './mobile.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import image from '../images/consultation.png';
+import { userLogOutAction } from '../redux/user/register-login';
 
 const MobileMenu = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const newState = useSelector((state) => state);
 
-  const loginStatus = newState.loginSessionsReducer.status;
-  // const registerStatus = newState.registerSessionsReducer.status;
+  const userStatus = newState.sessionsReducer.status;
   const [navBar, setNavBar] = useState(false);
   const Links = [
     {
-      id: 1,
+      id: 'doctors-link',
       path: '/doctors',
-      text: 'Home',
+      text: 'All-Doctor',
     },
     {
-      id: 2,
-      path: '/doctors',
-      text: 'Doctors',
+      id: 'book_appointment-link',
+      path: '/book_appointment',
+      text: 'Book_appointment',
     },
     {
-      id: 3,
-      path: '/doctors',
-      text: 'Appointment',
-    },
-    {
-      id: 4,
-      path: '/doctors',
-      text: 'My Appointments',
+      id: 'Mi-Appointments-link',
+      path: '/doctors_appoitment_front_end/',
+      text: 'Mi-Appointments',
     },
   ];
 
@@ -50,49 +47,73 @@ const MobileMenu = () => {
     },
   ];
 
-  // const closeMenu = () => {
-  //   setNavBar(false);
-  // };
+  const handleLogout = () => {
+    dispatch(userLogOutAction());
+    handleToggle();
+    navigate('/login');
+  };
 
   return (
     <div className="header">
       <img src={image} height="60" width="60" alt="logo" />
       <>
-        {
-        loginStatus !== '' ? (
+        {userStatus === 200 || userStatus === 201 ? (
           <nav className="navbar">
             <button type="button" onClick={handleToggle}>
-              {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
+              {navBar ? (
+                <i className="fa fa-close close-icon" />
+              ) : (
+                <i className="fa fa-bars" />
+              )}
             </button>
-
             <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
               {Links.map((link) => (
                 <li className="nav-item" key={link.id}>
-                  <Link className="link-active" to={link.path} onClick={handleToggle}>
+                  <Link
+                    className="link-active"
+                    to={link.path}
+                    onClick={handleToggle}
+                  >
                     {link.text}
                   </Link>
                 </li>
               ))}
+              <li className="logout-button-mobile">
+                <Link
+                  className="link-active"
+                  to="/login"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Link>
+              </li>
             </ul>
           </nav>
         ) : (
           <nav className="navbar">
             <button type="button" onClick={handleToggle}>
-              {navBar ? <i className="fa fa-close close-icon" /> : <i className="fa fa-bars" />}
+              {navBar ? (
+                <i className="fa fa-close close-icon" />
+              ) : (
+                <i className="fa fa-bars" />
+              )}
             </button>
 
             <ul className={`menuNav ${navBar ? ' showMenu' : ''}`}>
               {splashLinks.map((link) => (
                 <li className="nav-item" key={link.id}>
-                  <Link className="link-active" to={link.path}>
+                  <Link
+                    className="link-active"
+                    to={link.path}
+                    onClick={handleToggle}
+                  >
                     {link.text}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
-        )
-       }
+        )}
       </>
     </div>
   );

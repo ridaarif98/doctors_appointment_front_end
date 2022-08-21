@@ -1,17 +1,28 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import loginSessionsReducer from './user/login';
-import registerSessionsReducer from './user/register';
+import storage from 'redux-persist/lib/storage';
+import {
+  persistReducer,
+} from 'redux-persist';
+import sessionsReducer from './user/register-login';
 import doctorReducer from './mainpage/mainpage';
+import createAppointmentReducer from './appointment/appointment';
+
+const persistConfig = {
+  key: 'doctor_appointments',
+  storage,
+};
 
 const rootReducer = combineReducers({
-  loginSessionsReducer,
-  registerSessionsReducer,
+  sessionsReducer,
   doctorReducer,
+  createAppointmentReducer,
 });
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
   middleware: [
     ...getDefaultMiddleware({
       serializableCheck: false,
