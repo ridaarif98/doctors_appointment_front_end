@@ -51,25 +51,25 @@ const Doctor = () => {
         {doctors.length > 0 && doctors.map((doctor) => (
           <div key={doctor.id} className="doctor">
             <div className="doctor-image">
-            <img src={image} alt="doctor" className="card-img-top" />
+              <img src={image} alt="doctor" className="card-img-top" />
             </div>
-            <div className='doctor-info'>
-            <h4>
-              {doctor.name}
-            </h4>
-            <p className="h5 text-muted">. . . . . . . . .</p>
-            <p className="card-text text-muted">{doctor.details}</p>
-            <p className="d-flex text-center justify-content-center">
-              <a className="p-2" href="https://github.com/ridaarif98">
-                <i className="fa fa-twitter" />
-              </a>
-              <a className="p-2" href="https://github.com/ridaarif98">
-                <i className="fa fa-facebook-f" />
-              </a>
-              <a className="p-2" href="https://github.com/ridaarif98">
-                <i className="fa fa-linkedin" />
-              </a>
-            </p>
+            <div className="doctor-info">
+              <h4>
+                {doctor.name}
+              </h4>
+              <p className="h5 text-muted">. . . . . . . . .</p>
+              <p className="card-text text-muted">{doctor.details}</p>
+              <p className="d-flex text-center justify-content-center">
+                <a className="p-2" href="https://github.com/ridaarif98">
+                  <i className="fa fa-twitter" />
+                </a>
+                <a className="p-2" href="https://github.com/ridaarif98">
+                  <i className="fa fa-facebook-f" />
+                </a>
+                <a className="p-2" href="https://github.com/ridaarif98">
+                  <i className="fa fa-linkedin" />
+                </a>
+              </p>
             </div>
           </div>
 
