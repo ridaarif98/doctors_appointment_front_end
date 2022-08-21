@@ -29,7 +29,7 @@ function App() {
           <Route path="/" element={<Splash />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/doctors/:id" element={<DoctorDetails />}/>
+          <Route path="/doctors/:id" element={<DoctorDetails />} />
           <Route path="/doctors" element={<Doctor />} />
           <Route path="/book_appointment" element={<AppointmentForm />} />
         </Routes>
