@@ -59,14 +59,14 @@ const Doctor = () => {
               </h4>
               <p className="h5 text-muted">. . . . . . . . .</p>
               <p className="card-text text-muted">{doctor.details}</p>
-              <p className="d-flex text-center justify-content-center">
-                <a className="p-2" href="https://github.com/ridaarif98">
+              <p className="d-flex text-center justify-content-center icons">
+                <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
                   <i className="fa fa-twitter" />
                 </a>
-                <a className="p-2" href="https://github.com/ridaarif98">
+                <a className="p-2 m-1 icon" href="https://github.com/ridaarif98">
                   <i className="fa fa-facebook-f" />
                 </a>
-                <a className="p-2" href="https://github.com/ridaarif98">
+                <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
                   <i className="fa fa-linkedin" />
                 </a>
               </p>
