@@ -9,7 +9,7 @@ const Doctor = () => {
 
   useEffect(() => {
     dispatch(getDoctor());
-  }, [doctors]);
+  }, []);
 
   return (
     <div className="all-doctors">
