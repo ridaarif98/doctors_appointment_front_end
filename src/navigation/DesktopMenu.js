@@ -24,11 +24,16 @@ const DesktopMenu = () => {
     },
     {
       id: 3,
+      path: '/add-doctor',
+      text: 'Add Doctor',
+    },
+    {
+      id: 4,
       path: '/book_appointment',
       text: 'Book_appointment',
     },
     {
-      id: 4,
+      id: 5,
       path: '/appointments',
       text: 'Mi-Appointments',
     },
