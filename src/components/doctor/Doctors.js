@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDoctor } from '../../redux/mainpage/mainpage';
+import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
 import './doctor.css';
 
 const Doctor = () => {
@@ -11,6 +11,10 @@ const Doctor = () => {
     dispatch(getDoctor());
   }, []);
 
+  const handleDelete = (id) => {
+    dispatch(deleteDoctorAction(id));
+  };
+
   return (
     <div className="all-doctors">
       <h2>Doctors</h2>
@@ -20,6 +24,7 @@ const Doctor = () => {
             {doctor.name}
             <p>{doctor.details}</p>
             <i>{doctor.image}</i>
+            <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button>
           </li>
         ))}
       </ul>
