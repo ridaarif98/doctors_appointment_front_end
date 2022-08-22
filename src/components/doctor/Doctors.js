@@ -1,65 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom';
 import { getDoctor } from '../../redux/mainpage/mainpage';
 import './doctor.css';
-import PropTypes from 'prop-types';
-import { getDoctor } from '../../redux/mainpage/mainpage';
 import image from './img/consultation.png';
-
-function SampleNextArrow({ className, style, onClick }) {
-  return (
-    <div
-      onClick={onClick}
-      className={className}
-      onKeyDown={onClick}
-      role="button"
-      aria-label="Next Arrow"
-      tabIndex={0}
-      style={{
-        ...style,
-        display: 'block',
-        background: 'rgb(154, 226, 154)',
-        height: '6vh',
-        width: '4vw',
-        fontSize: '20px',
-        paddingTop: '10px',
-        borderRadius: '25px',
-        border: 'none',
-        textAlign: 'center',
-      }}
-    />
-  );
-}
-
-function SamplePrevArrow({ className, style, onClick }) {
-  // const { className, style, onClick } = props;
-  return (
-    <div
-      onClick={onClick}
-      className={className}
-      onKeyDown={onClick}
-      role="button"
-      aria-label="Prev Arrow"
-      tabIndex={0}
-      style={{
-        ...style,
-        display: 'block',
-        background: 'rgb(154, 226, 154)',
-        height: '6vh',
-        width: '4vw',
-        fontSize: '20px',
-        paddingTop: '10px',
-        borderRadius: '25px',
-        border: 'none',
-        textAlign: 'center',
-      }}
-    />
-  );
-}
 
 const Doctor = () => {
   const dispatch = useDispatch();
@@ -133,6 +81,57 @@ const Doctor = () => {
   );
 };
 
+function SampleNextArrow({ className, style, onClick }) {
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      onKeyDown={onClick}
+      role="button"
+      aria-label="Next Arrow"
+      tabIndex={0}
+      style={{
+        ...style,
+        display: 'block',
+        background: 'rgb(154, 226, 154)',
+        height: '6vh',
+        width: '4vw',
+        fontSize: '20px',
+        paddingTop: '10px',
+        borderRadius: '25px',
+        border: 'none',
+        textAlign: 'center',
+      }}
+    />
+  );
+}
+
+function SamplePrevArrow({ className, style, onClick }) {
+  // const { className, style, onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      onKeyDown={onClick}
+      role="button"
+      aria-label="Prev Arrow"
+      tabIndex={0}
+      style={{
+        ...style,
+        display: 'block',
+        background: 'rgb(154, 226, 154)',
+        height: '6vh',
+        width: '4vw',
+        fontSize: '20px',
+        paddingTop: '10px',
+        borderRadius: '25px',
+        border: 'none',
+        textAlign: 'center',
+      }}
+    />
+  );
+}
+
 SampleNextArrow.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -155,4 +154,5 @@ SamplePrevArrow.defaultProps = {
   style: {},
   onClick: () => {},
 };
+
 export default Doctor;
