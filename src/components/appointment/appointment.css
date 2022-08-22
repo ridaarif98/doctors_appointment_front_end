@@ -1,7 +1,7 @@
 .formSet {
   display: flex;
   flex-direction: column;
-  margin-left: 250px;
+  padding-left: 250px;
   height: 100vh;
   background-color: rgb(154, 226, 154);
   align-items: center;
