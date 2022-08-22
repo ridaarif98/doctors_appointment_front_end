@@ -8,6 +8,26 @@ import './doctor.css';
 import { getDoctor } from '../../redux/mainpage/mainpage';
 import image from './img/consultation.png';
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div onClick={onClick} className={className}
+     style={{ ...style, display: 'block', background: 'rgb(154, 226, 154)', height: '6vh',
+     width: '4vw', fontSize: '20px', paddingTop: '10px',
+     borderRadius: '25px', border: 'none', textAlign: 'center' }} />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div onClick={onClick} className={className}
+     style={{ ...style, display: 'block', background: 'rgb(154, 226, 154)', height: '6vh',
+     width: '4vw', fontSize: '20px', paddingTop: '10px',
+     borderRadius: '25px', border: 'none', textAlign: 'center' }} />
+  );
+}
+
 const Doctor = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -23,8 +43,9 @@ const Doctor = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,
-    prevArrow: <Icon.ArrowRight />,
-    nextArrow: <Icon.ArrowLeft />,
+    arrows: true,
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow />,
     responsive: [
       {
         breakpoint: 992,
@@ -47,6 +68,7 @@ const Doctor = () => {
 
     <div className="all-doctors">
       <h1>Doctors</h1>
+      <p className='text-muted text-center'>Click on doctor to see details!</p>
       <Slider {...settings}>
         {doctors.length > 0 && doctors.map((doctor) => (
           <div key={doctor.id} className="doctor">
@@ -61,56 +83,19 @@ const Doctor = () => {
               <p className="card-text text-muted">{doctor.details}</p>
               <p className="d-flex text-center justify-content-center icons">
                 <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
-                  <i className="fa fa-twitter" />
-                </a>
-                <a className="p-2 m-1 icon" href="https://github.com/ridaarif98">
-                  <i className="fa fa-facebook-f" />
+                  <i className="fa fa-twitter circle p-2" />
                 </a>
                 <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
-                  <i className="fa fa-linkedin" />
+                  <i className="fa fa-facebook-f circle p-2" />
+                </a>
+                <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
+                  <i className="fa fa-linkedin circle p-2" />
                 </a>
               </p>
             </div>
           </div>
-
-          // <li key={doctor.id} className="card text-center">
-
-          //   <img src={image} alt="doctor" className="card-img-top" />
-          //   <h5 className="card-title mt-5">
-          //     {' '}
-          //     {doctor.name}
-          //   </h5>
-          //   <p className="card-text text-muted">{doctor.details}</p>
-          //   <p className="d-flex text-center justify-content-center">
-          //     <a className="p-2" href="https://github.com/ridaarif98">
-          //       <i className="fa fa-twitter" />
-          //     </a>
-          //     <a className="p-2" href="https://github.com/ridaarif98">
-          //       <i className="fa fa-facebook-f" />
-          //     </a>
-          //     <a className="p-2" href="https://github.com/ridaarif98">
-          //       <i className="fa fa-linkedin" />
-          //     </a>
-          //   </p>
-          // </li>
         ))}
-        {/* <li className="card text-center">
-            <img src={image} alt="doctor" />
-            <h5 className="card-title"> TEst</h5>
-
-            <p className="card-text text-muted">bnbnbnbnbnbnbnbnbnbn</p>
-
-          </li>
-          <li className="card text-center">
-            <img src={image} alt="doctor" />
-            <h5 className="card-title"> TEst</h5>
-
-            <p className="card-text text-muted">bnbnbnbnbnbnbnbnbnbn</p>
-
-          </li> */}
-
       </Slider>
-      {/* </ul> */}
     </div>
   );
 };
