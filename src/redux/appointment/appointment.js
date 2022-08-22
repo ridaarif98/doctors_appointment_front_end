@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const CREATE_APPOINTMENT = 'doctors_appointment_front_end/appointment/CREATE_APPOINTMENT';
 export const initialState = {
-  fetchedData: '',
+  fetchedData: [],
   status: '',
 };
 
-export const createAppointment = async (city, appointmentTime, doctorId) => {
+export const createAppointment = async (city, appointmentTime, doctorId, user) => {
   const data = await axios({
     method: 'POST',
     url: 'http://localhost:3001/api/v1/appointments',
@@ -14,6 +14,7 @@ export const createAppointment = async (city, appointmentTime, doctorId) => {
       city,
       appointment_time: appointmentTime,
       doctor_id: doctorId,
+      user_id: user,
     },
   });
   return data;
@@ -24,8 +25,8 @@ export const appointmentAction = (data) => ({
   payload: data,
 });
 
-export const userAppointment = (city, appointmentTime, doctorId) => async (dispatch) => {
-  const data = await createAppointment(city, appointmentTime, doctorId);
+export const userAppointment = (city, appointmentTime, doctorId, user) => async (dispatch) => {
+  const data = await createAppointment(city, appointmentTime, doctorId, user);
   dispatch(appointmentAction(data));
 };
 

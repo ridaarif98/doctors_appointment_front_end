@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
+import { getDoctor } from '../../redux/mainpage/mainpage';
 import './doctor.css';
 import PropTypes from 'prop-types';
 import { getDoctor } from '../../redux/mainpage/mainpage';
@@ -63,7 +65,7 @@ const Doctor = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getDoctor());
-  }, []);
+  }, [dispatch]);
   const doctors = useSelector((state) => state.doctorReducer);
 
   const settings = {
