@@ -1,6 +1,7 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
+import { Link } from 'react-router-dom';
 import './doctor.css';
 
 const Doctor = () => {
@@ -21,7 +22,8 @@ const Doctor = () => {
       <ul className="div list-group">
         {doctors.length > 0 && doctors.map((doctor) => (
           <li key={doctor.id} className="list-group-item">
-            {doctor.name}
+            {' '}
+            <Link to={`/details/${doctor.id}`}>{doctor.name}</Link>
             <p>{doctor.details}</p>
             <i>{doctor.image}</i>
             <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button>
