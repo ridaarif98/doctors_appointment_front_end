@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
+// import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
+import { getDoctor } from '../../redux/mainpage/mainpage';
 import './doctor.css';
-import image from './img/consultation.png';
 
 const Doctor = () => {
   const dispatch = useDispatch();
@@ -18,9 +18,9 @@ const Doctor = () => {
     dispatch(getDoctor());
   }, []);
 
-  const handleDelete = (id) => {
-    dispatch(deleteDoctorAction(id));
-  };
+  // const handleDelete = (id) => {
+  //   dispatch(deleteDoctorAction(id));
+  // };
 
   const settings = {
     infinite: true,
@@ -58,30 +58,37 @@ const Doctor = () => {
       <p className="text-muted text-center">Click on doctor to see details!</p>
       <Slider {...settings}>
         {doctors.length > 0 && doctors.map((doctor) => (
-          <Link to={`/details/${doctor.id}`} key={doctor.id} className="doctor">
-            <div className="doctor-image">
-              <img src={image} alt="doctor" className="card-img-top" />
-            </div>
+          <div key={doctor.id} className="doctor">
+            <Link to={`/details/${doctor.id}`} className="doctor-image">
+              <img src={doctor.image} alt="doctor" className="card-img-top" />
+            </Link>
             <div className="doctor-info">
               <h4>
                 {doctor.name}
               </h4>
               <p className="h5 text-muted">. . . . . . . . .</p>
               <p className="card-text text-muted">{doctor.details}</p>
-              <p className="d-flex text-center justify-content-center icons">
-                <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
-                  <i className="fa fa-twitter circle p-2" />
-                </a>
-                <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
-                  <i className="fa fa-facebook-f circle p-2" />
-                </a>
-                <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
-                  <i className="fa fa-linkedin circle p-2" />
-                </a>
-              </p>
+              <div className="d-flex text-center justify-content-center icons">
+                <div>
+                  <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
+                    <i className="fa fa-twitter circle p-2" />
+                  </a>
+                </div>
+                <div>
+                  <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
+                    <i className="fa fa-facebook-f circle p-2" />
+                  </a>
+                </div>
+                <div>
+                  <a className="p-1 m-1 icon" href="https://github.com/ridaarif98">
+                    <i className="fa fa-linkedin circle p-2" />
+                  </a>
+                </div>
+              </div>
             </div>
-            <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button>
-          </Link>
+            { /* <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button> */}
+          </div>
+        ))}
       </Slider>
     </div>
   );

@@ -20,7 +20,7 @@ const Login = () => {
       navigate('/doctors');
       setSuccess(newState.fetchedData.message);
     } else if (newState.status !== 200 && newState.status !== '') {
-      setErrors(newState.fetchedData.error);
+      setErrors(newState.fetchedData);
     }
   }, [newState]);
 

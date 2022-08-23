@@ -15,25 +15,20 @@ const DesktopMenu = () => {
     {
       id: 1,
       path: '/doctors',
-      text: 'Doctors',
-    },
-    {
-      id: 2,
-      path: '/doctors',
       text: 'All-Doctor',
     },
     {
-      id: 3,
+      id: 2,
       path: '/add-doctor',
       text: 'Add Doctor',
     },
     {
-      id: 4,
+      id: 3,
       path: '/book_appointment',
       text: 'Book_appointment',
     },
     {
-      id: 5,
+      id: 4,
       path: '/appointments',
       text: 'Mi-Appointments',
     },
