@@ -1,3 +1,78 @@
 .all-doctors {
-  margin-left: 300px;
+  margin-left: 24vw;
+  width: 72vw;
+  margin-bottom: 10vh;
+}
+
+.all-doctors h1 {
+  text-align: center;
+  margin-top: 5vh;
+  font-weight: bold;
+}
+
+.all-doctors .smal-text {
+  display: flex;
+  text-align: center;
+}
+
+.doctor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 13vw;
+  padding: 20px;
+  margin: 10px;
+}
+
+.doctor-image {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.doctor-image img {
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 95%;
+  border-radius: 50%;
+}
+
+.doctor .doctor-info {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.doctor .doctor-info h4,
+.doctor .doctor-info p {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.doctor-info .icons .icon .circle {
+  text-decoration: none;
+  color: gray;
+  background-color: white;
+  font-size: 22px;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+/* .doctor-info .icons .icon .circle {
+	 border-radius: 50%;
+	 margin: 0.15em;
+	 font-size: 3em;
+} */
+
+@media only screen and (max-width: 620px) {
+  .all-doctors {
+    margin-left: 0;
+    width: 100vw;
+    margin-bottom: 10vh;
+  }
 }

@@ -50,7 +50,6 @@ const AppointmentForm = () => {
       </h3>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
-          {/* <label htmlFor="city" className="form-label h6 px-2">City</label> */}
           <input
             type="text"
             className="form-control m-2"
@@ -62,7 +61,6 @@ const AppointmentForm = () => {
             required
           />
 
-          {/* <label htmlFor="datetime" className="form-label h6">DateTime</label> */}
           <input
             className="form-control m-2"
             id="datetime"
