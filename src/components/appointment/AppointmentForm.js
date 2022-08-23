@@ -76,7 +76,6 @@ const AppointmentForm = () => {
           />
         </div>
         <div className="form-row">
-          {/* <label htmlFor="doctor" className="form-label h6">Doctor</label> */}
           <select id="doctor" value={doctorId} onChange={handleChange} name="doctorId" className="form-select m-2">
             <option value="" className="text">Select your doctor</option>
             {doctors.length > 0

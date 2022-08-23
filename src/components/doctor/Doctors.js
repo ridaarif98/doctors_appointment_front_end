@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getDoctor } from '../../redux/mainpage/mainpage';
+import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
 import './doctor.css';
 
 const Doctor = () => {
@@ -11,6 +11,10 @@ const Doctor = () => {
   useEffect(() => {
     dispatch(getDoctor());
   }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteDoctorAction(id));
+  };
 
   return (
     <div className="all-doctors">
@@ -22,6 +26,7 @@ const Doctor = () => {
             <Link to={`/details/${doctor.id}`}>{doctor.name}</Link>
             <p>{doctor.details}</p>
             <i>{doctor.image}</i>
+            <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button>
           </li>
         ))}
       </ul>
