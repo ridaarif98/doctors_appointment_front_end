@@ -18,7 +18,6 @@
 .details-fill {
   z-index: 100;
   top: 50vh;
-  float: left;
   width: 60px;
   height: 50px;
   background-color: #97bf11;
@@ -64,10 +63,7 @@
   border-bottom-right-radius: 100%;
 }
 
-.image {
-  margin: 20px 20px 0px 0px;
-}
-
 .outline-3 {
   border-radius: 50px;
 }
+

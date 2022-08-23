@@ -25,8 +25,8 @@ const DoctorDetails = () => {
             }
           }
         >
-          <div className="row details-pg">
-            <div className="col-md-6 col-12 image">
+          <div className="row details-fill">
+            <div className="col-md-6 col-12 rounded float-left">
               <img height="450px" width="450px" src={doc.image} alt="Portrait of doctor Bruno Rodrigues" />
             </div>
           </div>
@@ -71,7 +71,7 @@ const DoctorDetails = () => {
             </div>
           </Link>
 
-          <Link to="/">
+          <Link to="/doctors">
             <div className="main-page-handle-left d-flex justify-content-center align-items-center">
               <BsFillCaretLeftFill />
             </div>
