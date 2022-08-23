@@ -60,7 +60,7 @@ const MobileMenu = () => {
 
   return (
     <div className="header">
-      <img src={image} height="60" width="60" alt="logo" />
+      <img src={image} height="60" width="60" alt="logo" className="mobile-logo" />
       <>
         {userStatus === 200 || userStatus === 201 ? (
           <nav className="navbar">

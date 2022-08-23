@@ -96,7 +96,7 @@ const DesktopMenu = () => {
         ) : (
           <nav className="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
             <a className="navbar-brand" href="https://github.com/ridaarif98/doctors_appointment_front_end">
-              <img src={image} width="80" height="80" alt="" />
+              <img src={image} width="80" height="80" alt="" className="logo" />
             </a>
             <ul className="nav flex-column">
               {splashLinks.map((link) => (
