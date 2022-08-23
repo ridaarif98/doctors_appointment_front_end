@@ -35,6 +35,13 @@ const Doctor = () => {
     nextArrow: <SampleNextArrow />,
     responsive: [
       {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
@@ -59,13 +66,13 @@ const Doctor = () => {
       <Slider {...settings}>
         {doctors.length > 0 && doctors.map((doctor) => (
           <div key={doctor.id} className="doctor">
-            <Link to={`/details/${doctor.id}`} className="doctor-image">
+            <div className="doctor-image">
               <img src={doctor.image} alt="doctor" className="card-img-top" />
-            </Link>
+            </div>
             <div className="doctor-info">
-              <h4>
+              <Link to={`/details/${doctor.id}`}>
                 {doctor.name}
-              </h4>
+              </Link>
               <p className="h5 text-muted">. . . . . . . . .</p>
               <p className="card-text text-muted">{doctor.details}</p>
               <div className="d-flex text-center justify-content-center icons">
