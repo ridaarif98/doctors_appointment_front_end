@@ -25,7 +25,7 @@ const MobileMenu = () => {
     },
     {
       id: 'Mi-Appointments-link',
-      path: '/doctors_appoitment_front_end/',
+      path: '/appointments',
       text: 'Mi-Appointments',
     },
   ];

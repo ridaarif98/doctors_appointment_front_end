@@ -6,10 +6,11 @@ import './doctor.css';
 
 const Doctor = () => {
   const dispatch = useDispatch();
+  const doctors = useSelector((state) => state.doctorReducer);
+
   useEffect(() => {
     dispatch(getDoctor());
-  }, [dispatch]);
-  const doctors = useSelector((state) => state.doctorReducer);
+  }, []);
 
   return (
     <div className="all-doctors">
