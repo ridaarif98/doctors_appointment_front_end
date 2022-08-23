@@ -7,6 +7,8 @@ import AppointmentForm from './components/appointment/AppointmentForm';
 import './App.css';
 import { ViewProvider, MyComponent } from './navigation/ViewPort';
 import Doctor from './components/doctor/Doctors';
+import { getDoctor } from './redux/mainpage/mainpage';
+import Appointments from './components/appointment/Appointments';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/doctors/:id" element={<DoctorDetails />} />
 
           <Route path="/book_appointment" element={<AppointmentForm />} />
+          <Route path="/appointments" element={<Appointments />} />
+          <Route path="/add-doctor" element={<DoctorForm />} />
         </Routes>
       </Router>
     </>

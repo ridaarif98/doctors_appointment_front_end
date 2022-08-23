@@ -6,7 +6,7 @@ import {
 } from 'redux-persist';
 import sessionsReducer from './user/register-login';
 import doctorReducer from './mainpage/mainpage';
-import createAppointmentReducer from './appointment/appointment';
+import appointmentReducer from './appointment/appointment';
 
 const persistConfig = {
   key: 'doctor_appointments',
@@ -16,7 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   sessionsReducer,
   doctorReducer,
-  createAppointmentReducer,
+  appointmentReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,20 +1,26 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { getDoctor } from '../../redux/mainpage/mainpage';
+import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
 import './doctor.css';
 import image from './img/consultation.png';
 
 const Doctor = () => {
   const dispatch = useDispatch();
+  const doctors = useSelector((state) => state.doctorReducer);
+
   useEffect(() => {
     dispatch(getDoctor());
-  }, [dispatch]);
-  const doctors = useSelector((state) => state.doctorReducer);
+  }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteDoctorAction(id));
+  };
 
   const settings = {
     infinite: true,
@@ -52,7 +58,7 @@ const Doctor = () => {
       <p className="text-muted text-center">Click on doctor to see details!</p>
       <Slider {...settings}>
         {doctors.length > 0 && doctors.map((doctor) => (
-          <div key={doctor.id} className="doctor">
+          <Link to={`/details/${doctor.id}`} key={doctor.id} className="doctor">
             <div className="doctor-image">
               <img src={image} alt="doctor" className="card-img-top" />
             </div>
@@ -74,8 +80,8 @@ const Doctor = () => {
                 </a>
               </p>
             </div>
-          </div>
-        ))}
+            <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button>
+          </Link>
       </Slider>
     </div>
   );
@@ -107,7 +113,6 @@ function SampleNextArrow({ className, style, onClick }) {
 }
 
 function SamplePrevArrow({ className, style, onClick }) {
-  // const { className, style, onClick } = props;
   return (
     <div
       onClick={onClick}

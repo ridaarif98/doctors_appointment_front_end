@@ -19,13 +19,18 @@ const MobileMenu = () => {
       text: 'All-Doctor',
     },
     {
+      id: 'add-newlink',
+      path: '/add-doctor',
+      text: 'Add Doctor',
+    },
+    {
       id: 'book_appointment-link',
       path: '/book_appointment',
       text: 'Book_appointment',
     },
     {
       id: 'Mi-Appointments-link',
-      path: '/doctors_appoitment_front_end/',
+      path: '/appointments',
       text: 'Mi-Appointments',
     },
   ];

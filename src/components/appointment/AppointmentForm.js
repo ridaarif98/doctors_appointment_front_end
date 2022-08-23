@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { userAppointment } from '../../redux/appointment/appointment';
 import './appointment.css';
 
@@ -11,6 +12,7 @@ const AppointmentForm = () => {
   const doctors = useSelector((state) => state.doctorReducer);
   const activeUser = useSelector((state) => state.sessionsReducer.fetchedData.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const getTarget = e.target;
@@ -38,6 +40,7 @@ const AppointmentForm = () => {
     setCity('');
     setTime('');
     setId('');
+    setTimeout(() => { navigate('/appointments'); }, 1000);
   };
 
   return (
@@ -73,7 +76,6 @@ const AppointmentForm = () => {
           />
         </div>
         <div className="form-row">
-          {/* <label htmlFor="doctor" className="form-label h6">Doctor</label> */}
           <select id="doctor" value={doctorId} onChange={handleChange} name="doctorId" className="form-select m-2">
             <option value="" className="text">Select your doctor</option>
             {doctors.length > 0
