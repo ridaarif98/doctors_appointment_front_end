@@ -34,8 +34,6 @@ const Appointments = () => {
                 <li key={apt.id} className="appointment">
                   <div>
                     <h4>
-                      Dr
-                      {' '}
                       {doctors.filter((doctor) => doctor.id === apt.doctor_id).map(
                         (doc) => doc.name,
                       )}

@@ -22,6 +22,8 @@ const Doctor = () => {
   //   dispatch(deleteDoctorAction(id));
   // };
 
+  const dotString = '.';
+
   const settings = {
     infinite: true,
     slidesToShow: 3,
@@ -61,8 +63,8 @@ const Doctor = () => {
   return (
 
     <div className="all-doctors">
-      <h1>Doctors</h1>
-      <p className="text-muted text-center">Click on doctor to see details!</p>
+      <h1 className="doc-title">Doctors</h1>
+      <p className="text-muted text-center notice-word">Click on doctor to see details!</p>
       <Slider {...settings}>
         {doctors.length > 0 && doctors.map((doctor) => (
           <div key={doctor.id} className="doctor">
@@ -70,10 +72,10 @@ const Doctor = () => {
               <img src={doctor.image} alt="doctor" className="card-img-top" />
             </div>
             <div className="doctor-info">
-              <Link to={`/details/${doctor.id}`}>
+              <Link to={`/details/${doctor.id}`} className="doctor-name">
                 {doctor.name}
               </Link>
-              <p className="h5 text-muted">. . . . . . . . .</p>
+              <p className="h5 text-muted">{dotString.repeat(doctors.length)}</p>
               <p className="card-text text-muted">{doctor.details}</p>
               <div className="d-flex text-center justify-content-center icons">
                 <div>

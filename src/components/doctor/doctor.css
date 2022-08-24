@@ -1,7 +1,8 @@
 .all-doctors {
-  margin-left: 24vw;
+  margin-left: 20vw;
   width: 72vw;
   margin-bottom: 10vh;
+  padding-top: 10vh;
 }
 
 .all-doctors h1 {
@@ -13,6 +14,18 @@
 .all-doctors .smal-text {
   display: flex;
   text-align: center;
+}
+
+div.slick-arrow.slic-next {
+  padding-top: 17px;
+}
+
+.doc-title {
+  color: blue;
+}
+
+.notice-word {
+  font-style: italic;
 }
 
 .doctor {
@@ -41,17 +54,22 @@
 }
 
 .doctor .doctor-info {
-  margin-top: 5vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.doctor .doctor-info h4,
+.doctor .doctor-info a,
 .doctor .doctor-info p {
+  text-decoration: none;
   display: flex;
   text-align: center;
   justify-content: center;
+}
+
+.doctor-name {
+  color: #6c757d;
 }
 
 .doctor-info .icons .icon .circle {
