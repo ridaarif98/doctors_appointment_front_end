@@ -11,7 +11,6 @@ const DoctorDetails = () => {
     dispatch(getDoctor());
   }, []);
   const doctors = useSelector((state) => state.doctorReducer);
-  console.log(doctors);
   const { id } = useParams();
 
   return (

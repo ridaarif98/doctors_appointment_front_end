@@ -1,6 +1,6 @@
 .doctor-details-container {
-   padding-left: 18vw;
-   padding-top: 15vh;
+  padding-left: 18vw;
+  padding-top: 15vh;
 }
 
 .doc-section {
@@ -54,12 +54,6 @@
   padding: 0;
 }
 
-.doc-specialisation p:nth-child(2) {
-  color: #7c3aed;
-  font-size: 1.2rem;
-  font-style: italic;
-}
-
 .doc-slogan p {
   margin-top: 5px;
   font-size: 1rem;
@@ -86,6 +80,12 @@
   color: #65a30d;
   background-color: white;
   border: 1px solid #65a30d;
+}
+
+.doc-specialisation p:nth-child(2) {
+  color: #7c3aed;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 @media only screen and (max-width: 900px) {
@@ -116,7 +116,7 @@
 
 @media only screen and (max-width: 768px) {
   .doctor-details-container {
-    padding-top: 0vh;
+    padding-top: 0;
     padding-left: 0;
     width: 90%;
     margin: 0 auto;
@@ -149,22 +149,21 @@
   }
 
   .doc-specialisation,
-  .doc-fee p{
-  font-size: 0.8rem;
-  }
-
-  .doc-specialisation p:nth-child(2) {
+  .doc-fee p {
     font-size: 0.8rem;
   }
 
   .doc-slogan p {
     margin-top: 0;
     font-size: 0.8rem;
-
   }
 
   .make-appointment-btn {
     font-size: 1.3rem;
     padding: 10px 15px;
+  }
+
+  .doc-specialisation p:nth-child(2) {
+    font-size: 0.8rem;
   }
 }
