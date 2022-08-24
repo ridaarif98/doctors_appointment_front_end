@@ -1,69 +1,170 @@
-.reserve {
-  background-color: #97bf11;
-  border-radius: 25px;
+.doctor-details-container {
+   padding-left: 18vw;
+   padding-top: 15vh;
 }
 
-.reserve-div {
-  margin-top: 40px;
-}
-
-.reserve-btn {
-  background-color: #97bf11 !important;
-  border: none !important;
-  color: white !important;
-  font-size: larger !important;
-  font-weight: 800 !important;
-}
-
-.details-fill {
-  z-index: 100;
-  top: 50vh;
-  width: 60px;
-  height: 50px;
-  background-color: #97bf11;
-  color: white;
-  font-size: 20px;
-  border-bottom-left-radius: 100%;
-  border-top-left-radius: 100%;
-  margin-top: 10% !important;
-  margin-left: -25%;
-}
-
-.close {
+.doc-section {
   display: flex;
-  flex-direction: column;
-  float: right;
-  border: none;
-  color: black;
-  margin-right: 10%;
-  background: #cbe86c;
-  background: linear-gradient(
-    135deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
-  font-size: xx-large;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-image {
+  width: 50%;
+  height: 60vh;
+  display: flex;
+}
+
+.doc-image img {
+  border-radius: 100px;
+  width: 90%;
+  height: 100%;
+}
+
+.doc-info {
+  display: flex;
+  flex-flow: column;
+  width: 30%;
+  gap: 10px;
+}
+
+.doc-info .doc-name {
+  align-self: end;
+  color: blue;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
-:is(text, p) {
-  color: black;
+.doc-specialisation,
+.doc-fee {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  justify-content: space-between;
+  background-color: #e5e7eb;
 }
 
-.main-page-handle-left {
-  z-index: 100;
-  position: absolute;
-  top: 90vh;
-  width: 60px;
-  height: 50px;
-  font-size: 20px;
+.doc-specialisation p,
+.doc-fee p,
+.make-appointment-btn p {
+  margin: 0;
+  padding: 0;
+}
+
+.doc-specialisation p:nth-child(2) {
+  color: #7c3aed;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.doc-slogan p {
+  margin-top: 5px;
+  font-size: 1rem;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.make-appointment-btn {
+  background-color: #65a30d;
   color: white;
-  background-color: #97bf11;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-}
-
-.outline-3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 15px 15px;
   border-radius: 50px;
+  align-self: center;
+  text-decoration: none;
 }
 
+.make-appointment-btn:hover {
+  color: #65a30d;
+  background-color: white;
+  border: 1px solid #65a30d;
+}
+
+@media only screen and (max-width: 900px) {
+  .doctor-details-container {
+    padding-top: 12vh;
+  }
+
+  .doc-section {
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .doc-image {
+    width: auto;
+    height: 50%;
+  }
+
+  .doc-info {
+    width: auto;
+  }
+
+  .doc-info .doc-name {
+    align-self: center;
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .doctor-details-container {
+    padding-top: 0vh;
+    padding-left: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .doc-section {
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 7px;
+  }
+
+  .doc-image {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 50%;
+  }
+
+  .doc-info {
+    width: auto;
+  }
+
+  .doc-info .doc-name {
+    align-self: center;
+    font-size: 1.4rem;
+  }
+
+  .doc-info .doc-name h3 {
+    margin: 0;
+  }
+
+  .doc-specialisation,
+  .doc-fee p{
+  font-size: 0.8rem;
+  }
+
+  .doc-specialisation p:nth-child(2) {
+    font-size: 0.8rem;
+  }
+
+  .doc-slogan p {
+    margin-top: 0;
+    font-size: 0.8rem;
+
+  }
+
+  .make-appointment-btn {
+    font-size: 1.3rem;
+    padding: 10px 15px;
+  }
+}
