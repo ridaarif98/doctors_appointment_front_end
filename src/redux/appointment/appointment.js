@@ -12,7 +12,7 @@ export const initialState = {
 export const createAppointment = async (city, appointmentTime, doctorId, user) => {
   const data = await axios({
     method: 'POST',
-    url: 'http://localhost:3001/api/v1/appointments',
+    url: 'https://doctor-appoitmtment-backend.herokuapp.com/api/v1/appointments',
     data: {
       city,
       appointment_time: appointmentTime,
@@ -24,12 +24,12 @@ export const createAppointment = async (city, appointmentTime, doctorId, user) =
 };
 
 export const deleteAppointment = async (appointment) => {
-  const data = await axios.delete(`${'http://localhost:3001/api/v1/appointments'}/${appointment}`);
+  const data = await axios.delete(`${'https://doctor-appoitmtment-backend.herokuapp.com/api/v1/appointments'}/${appointment}`);
   return data;
 };
 
 export const getAppointments = () => async (dispatch) => {
-  const appointmentGet = await fetch('http://[::1]:3001//api/v1/appointments');
+  const appointmentGet = await fetch('https://doctor-appoitmtment-backend.herokuapp.com/api/v1/appointments');
   const doctorList = await appointmentGet.json();
   let appointmentsData = [];
   appointmentsData = doctorList.data.map((doctor) => doctor);
