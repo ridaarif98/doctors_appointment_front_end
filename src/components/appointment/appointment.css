@@ -53,7 +53,8 @@
   background-repeat: no-repeat;
 }
 
-.my-appointments {
+.my-appointments,
+.notice-container {
   background-color: rgba(235, 255, 255, 0.7);
   backdrop-filter: blur(5px);
   width: 70%;
@@ -75,13 +76,19 @@
   padding: 0;
 }
 
-.appointment {
+.appointment,
+.notice {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: skyblue;
   padding: 10px;
   border-radius: 8px;
+}
+
+.notice {
+  font-style: italic;
+  justify-content: center;
 }
 
 .appointment p {
@@ -129,7 +136,8 @@
     padding-top: 15vh;
   }
 
-  .my-appointments {
+  .my-appointments,
+  .notice-container {
     width: 95%;
     margin: 0 1vh;
     padding: 10px;
@@ -139,7 +147,8 @@
     font-size: 1.2rem;
   }
 
-  .appointment h4 {
+  .appointment h4,
+  .notice {
     font-size: 1rem;
   }
 
@@ -179,7 +188,8 @@
     padding-top: 15vh;
   }
 
-  .my-appointments {
+  .my-appointments,
+  .notice-container {
     width: 95%;
     margin: 0 1vh;
     padding: 10px;

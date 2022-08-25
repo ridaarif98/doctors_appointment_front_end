@@ -51,6 +51,7 @@ export const getDoctor = () => async (dispatch) => {
   doctorsData = doctorList.data.map((doctor) => ({
     id: doctor.id,
     name: doctor.name,
+    fee: doctor.fee,
     details: doctor.details,
     image: doctor.image,
   }));

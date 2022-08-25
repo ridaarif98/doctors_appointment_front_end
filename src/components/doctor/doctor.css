@@ -1,7 +1,8 @@
 .all-doctors {
-  margin-left: 24vw;
-  width: 72vw;
-  margin-bottom: 10vh;
+  padding: 5vh 20vh 10vh 30vh;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f9ff;
 }
 
 .all-doctors h1 {
@@ -13,6 +14,18 @@
 .all-doctors .smal-text {
   display: flex;
   text-align: center;
+}
+
+div.slick-arrow.slic-next {
+  padding-top: 17px;
+}
+
+.doc-title {
+  color: blue;
+}
+
+.notice-word {
+  font-style: italic;
 }
 
 .doctor {
@@ -35,23 +48,28 @@
 .doctor-image img {
   justify-content: center;
   align-items: center;
-  height: 50%;
-  width: 95%;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
 }
 
 .doctor .doctor-info {
-  margin-top: 5vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.doctor .doctor-info h4,
+.doctor .doctor-info a,
 .doctor .doctor-info p {
+  text-decoration: none;
   display: flex;
   text-align: center;
   justify-content: center;
+}
+
+.doctor-name {
+  color: #6c757d;
 }
 
 .doctor-info .icons .icon .circle {
@@ -63,16 +81,14 @@
   border: 1px solid gray;
 }
 
-/* .doctor-info .icons .icon .circle {
-	 border-radius: 50%;
-	 margin: 0.15em;
-	 font-size: 3em;
-} */
-
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 800px) {
   .all-doctors {
-    margin-left: 0;
-    width: 100vw;
-    margin-bottom: 10vh;
+    padding: 15vh 5vh 1vh 20vh;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .all-doctors {
+    padding: 8vh 7vh 1vh 7vh;
   }
 }

@@ -8,7 +8,6 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState('');
-  const [success, setSuccess] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,9 +17,12 @@ const Login = () => {
   useEffect(() => {
     if (newState.status === 200) {
       navigate('/doctors');
-      setSuccess(newState.fetchedData.message);
     } else if (newState.status !== 200 && newState.status !== '') {
-      setErrors(newState.fetchedData);
+      if (newState.fetchedData.error === 401) {
+        setErrors(newState.fetchedData.error);
+      } else {
+        setErrors(newState.fetchedData.error);
+      }
     }
   }, [newState]);
 
@@ -47,15 +49,12 @@ const Login = () => {
     form.reset();
 
     dispatch(userLogin(email, password));
-    // navigate('/doctors');
   };
 
   return (
     <section className="login-section">
       <div className="login-container">
         <h2 className="login-title">Login</h2>
-        <p>{errors}</p>
-        <p>{success}</p>
         <form onSubmit={handleSubmit} className="login-form">
           <input
             type="email"
@@ -66,7 +65,7 @@ const Login = () => {
             required
           />
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Enter your password"
             value={password}
@@ -79,6 +78,7 @@ const Login = () => {
             id="form-submit"
           />
         </form>
+        <p className="error">{errors}</p>
       </div>
     </section>
   );

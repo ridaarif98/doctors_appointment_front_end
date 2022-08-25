@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-// import { getDoctor, deleteDoctorAction } from '../../redux/mainpage/mainpage';
 import { getDoctor } from '../../redux/mainpage/mainpage';
 import './doctor.css';
 
@@ -18,9 +17,7 @@ const Doctor = () => {
     dispatch(getDoctor());
   }, []);
 
-  // const handleDelete = (id) => {
-  //   dispatch(deleteDoctorAction(id));
-  // };
+  const dotString = '.';
 
   const settings = {
     infinite: true,
@@ -35,14 +32,21 @@ const Doctor = () => {
     nextArrow: <SampleNextArrow />,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -54,19 +58,19 @@ const Doctor = () => {
   return (
 
     <div className="all-doctors">
-      <h1>Doctors</h1>
-      <p className="text-muted text-center">Click on doctor to see details!</p>
+      <h1 className="doc-title">Doctors</h1>
+      <p className="text-muted text-center notice-word">Click on doctor to see details!</p>
       <Slider {...settings}>
         {doctors.length > 0 && doctors.map((doctor) => (
           <div key={doctor.id} className="doctor">
-            <div className="doctor-image">
+            <Link to={`/doctors/${doctor.id}`} className="doctor-image">
               <img src={doctor.image} alt="doctor" className="card-img-top" />
-            </div>
+            </Link>
             <div className="doctor-info">
               <Link to={`/doctors/${doctor.id}`} className="doctor-name">
                 {doctor.name}
               </Link>
-              <p className="h5 text-muted">. . . . . . . . .</p>
+              <p className="h5 text-muted">{dotString.repeat(doctors.length)}</p>
               <p className="card-text text-muted">{doctor.details}</p>
               <div className="d-flex text-center justify-content-center icons">
                 <div>
@@ -86,7 +90,6 @@ const Doctor = () => {
                 </div>
               </div>
             </div>
-            { /* <button type="button" onClick={() => handleDelete(doctor.id)}>Delete</button> */}
           </div>
         ))}
       </Slider>

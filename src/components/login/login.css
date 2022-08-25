@@ -27,6 +27,7 @@
   justify-content: center;
   align-items: center;
   gap: 13px;
+  margin-bottom: 5px;
 }
 
 form input {
@@ -44,4 +45,13 @@ form input {
 #form-submit:hover {
   background-color: #77b5fe;
   color: white;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }

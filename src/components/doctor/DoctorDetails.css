@@ -1,6 +1,8 @@
 .doctor-details-container {
   padding-left: 18vw;
   padding-top: 15vh;
+  background-color: #f0f9ff;
+  height: 100vh;
 }
 
 .doc-section {
@@ -44,7 +46,7 @@
   font-size: 1.1rem;
   border-radius: 5px;
   justify-content: space-between;
-  background-color: #e5e7eb;
+  background-color: #bbf7d0;
 }
 
 .doc-specialisation p,
@@ -82,7 +84,8 @@
   border: 1px solid #65a30d;
 }
 
-.doc-specialisation p:nth-child(2) {
+.doc-specialisation p:nth-child(2),
+.doc-fee p:nth-child(2) {
   color: #7c3aed;
   font-size: 1.2rem;
   font-style: italic;
@@ -100,8 +103,9 @@
   }
 
   .doc-image {
-    width: auto;
-    height: 50%;
+    padding-left: 5vw;
+    width: 60vw;
+    height: 40vh;
   }
 
   .doc-info {
@@ -118,21 +122,25 @@
   .doctor-details-container {
     padding-top: 0;
     padding-left: 0;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 0;
   }
 
   .doc-section {
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: center;
+    height: 100vh;
     gap: 7px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 7vh;
   }
 
   .doc-image {
     display: flex;
     justify-content: center;
-    width: auto;
-    height: 50%;
+    width: 80vw;
+    border-radius: 50%;
   }
 
   .doc-info {

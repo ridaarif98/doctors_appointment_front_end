@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteAppointmentAction, getAppointments } from '../../redux/appointment/appointment';
 
 const Appointments = () => {
-  // const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const activeUser = useSelector((state) => state.sessionsReducer.fetchedData.user);
   const doctors = useSelector((state) => state.doctorReducer);
@@ -21,9 +20,9 @@ const Appointments = () => {
     <section className="appointments-container">
       {
       allAppointments.length === 0 ? (
-        <div>
+        <div className="notice-container">
           <h2 className="title">MY APPOINTMENTS</h2>
-          <h4>No Appointments Available</h4>
+          <h4 className="notice">No Appointments Available</h4>
         </div>
       ) : (
         <>
@@ -34,7 +33,6 @@ const Appointments = () => {
                 <li key={apt.id} className="appointment">
                   <div>
                     <h4>
-                      Dr
                       {' '}
                       {doctors.filter((doctor) => doctor.id === apt.doctor_id).map(
                         (doc) => doc.name,
@@ -43,7 +41,7 @@ const Appointments = () => {
                     <p>{apt.city}</p>
                   </div>
                   <p>{apt.appointment_time.substr(0, 10)}</p>
-                  <button type="button" onClick={() => handleDelete(apt.id)} className="appointment-btn">Delete</button>
+                  <button type="button" onClick={() => handleDelete(apt.id)} className="appointment-btn">Cancel</button>
                 </li>
               ) : null))
             }

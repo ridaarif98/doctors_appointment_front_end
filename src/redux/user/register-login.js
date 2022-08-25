@@ -2,9 +2,9 @@ import {
   register, initialState, login,
 } from './user';
 
-const REGISTER = 'USER_REGISTER';
-const LOGIN = 'USER_LOGIN';
-const LOGOUT = 'userLogOut';
+const REGISTER = 'REGISTER';
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
 
 const sessionsReducer = (state = initialState, action) => {
   switch (action.type) {
