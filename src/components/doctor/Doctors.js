@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 import { getDoctor } from '../../redux/mainpage/mainpage';
 import './doctor.css';
 
-const Doctor = () => {
+const Doctors = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctorReducer);
 
@@ -170,4 +170,4 @@ SamplePrevArrow.defaultProps = {
   onClick: () => {},
 };
 
-export default Doctor;
+export default Doctors;
