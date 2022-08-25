@@ -82,7 +82,7 @@ const DoctorForm = () => {
               className="form-control m-2"
               id="details"
               name="details"
-              placeholder="Enter doctor details"
+              placeholder="Enter doctor Specialization"
               value={details}
               onChange={handleChange}
               required
@@ -99,13 +99,12 @@ const DoctorForm = () => {
               required
             />
           </div>
-          <input
-            type="submit"
-            value=" Add Doctor"
-            className="btn btn-primary m-2 bt-submit"
-          />
-
         </div>
+        <input
+          type="submit"
+          value=" Add Doctor"
+          className="btn btn-primary m-2 bt-submit"
+        />
       </form>
     </div>
   );

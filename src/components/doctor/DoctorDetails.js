@@ -29,7 +29,10 @@ const DoctorDetails = () => {
 
             <div className="doc-fee">
               <p> Hourly fee</p>
-              <p>{doc.fee}</p>
+              <p>
+                $
+                {doc.fee}
+              </p>
             </div>
 
             <div className="doc-slogan">
