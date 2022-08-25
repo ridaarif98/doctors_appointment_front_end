@@ -42,11 +42,16 @@ const MobileMenu = () => {
   const splashLinks = [
     {
       id: 1,
+      path: '/',
+      text: 'Home',
+    },
+    {
+      id: 2,
       path: '/login',
       text: 'Login',
     },
     {
-      id: 2,
+      id: 3,
       path: '/register',
       text: 'Register',
     },
@@ -60,7 +65,7 @@ const MobileMenu = () => {
 
   return (
     <div className="header">
-      <img src={image} height="60" width="60" alt="logo" />
+      <img src={image} height="60" width="60" alt="logo" className="logo" />
       <>
         {userStatus === 200 || userStatus === 201 ? (
           <nav className="navbar">

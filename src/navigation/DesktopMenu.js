@@ -37,11 +37,16 @@ const DesktopMenu = () => {
   const splashLinks = [
     {
       id: 1,
+      path: '/',
+      text: 'Home',
+    },
+    {
+      id: 2,
       path: '/login',
       text: 'Login',
     },
     {
-      id: 2,
+      id: 3,
       path: '/register',
       text: 'Register',
     },
@@ -56,7 +61,7 @@ const DesktopMenu = () => {
     <>
       {
         userStatus === 200 || userStatus === 201 ? (
-          <nav className="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+          <nav className="col-sm-3 col-md-2 d-none d-sm-block bg-white sidebar">
             <a className="navbar-brand" href="https://github.com/ridaarif98/doctors_appointment_front_end">
               <img src={image} width="80" height="80" alt="" />
             </a>
