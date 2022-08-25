@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import AppointmentForm from "../AppointmentForm";
+import AppointmentForm from '../AppointmentForm';
 
 jest.mock('../AppointmentForm');
 test('renders Available Houses', () => {

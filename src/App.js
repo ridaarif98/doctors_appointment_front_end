@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Splash from './components/splash/Splash';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import DoctorDetails from './components/doctor/DoctorDetails';
 import AppointmentForm from './components/appointment/AppointmentForm';
 import './App.css';
-import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import { ViewProvider, MyComponent } from './navigation/ViewPort';
 import Doctors from './components/doctor/Doctors';
