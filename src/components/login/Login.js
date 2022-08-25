@@ -65,7 +65,7 @@ const Login = () => {
             required
           />
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Enter your password"
             value={password}
