@@ -9,8 +9,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [errors, setErrors] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, seterror] = useState('');
 
   const newState = useSelector((state) => state.sessionsReducer);
 
@@ -20,9 +19,12 @@ const Register = () => {
   useEffect(() => {
     if (newState.status === 201) {
       navigate('/doctors');
-      setSuccess(newState.fetchedData.message);
     } else if (newState.status !== 201 && newState.status !== '') {
-      setErrors(newState.fetchedData.error);
+      if (newState.fetchedData.error === 422) {
+        seterror(newState.fetchedData.error);
+      } else {
+        seterror(newState.fetchedData.error);
+      }
     }
   }, [newState]);
 
@@ -61,8 +63,6 @@ const Register = () => {
     <section className="register-section">
       <div className="register-container">
         <h2 className="register-title">Register</h2>
-        <p>{errors}</p>
-        <p>{success}</p>
         <form onSubmit={handleSubmit} className="register-form">
           <input
             type="text"
@@ -98,6 +98,7 @@ const Register = () => {
           />
           <input type="submit" value="Register" id="form-submit" />
         </form>
+        <p className="error">{error}</p>
       </div>
     </section>
   );
