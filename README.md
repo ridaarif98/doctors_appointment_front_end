@@ -19,7 +19,7 @@ Doctor Appointment frontend is react frontend application for book an appointmen
 
 ## Link Demo
 
-[Live demo link](https://car-booking-front-end.herokuapp.com/)
+[Live demo link](https://appointment-app-frontend.netlify.app/)
 
 ## Built With
 - CSS
