@@ -1,0 +1,104 @@
+.logo {
+  position: fixed;
+  left: 80%;
+  top: 0;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.navbar {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar button {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  left: 20px;
+  top: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.navbar button i {
+  font-size: 40px;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background: whitesmoke;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  margin-left: 0;
+  padding-left: 0;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.menuNav.showMenu {
+  width: 50%;
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 0;
+}
+
+.menuNav.showMenu li {
+  color: black;
+}
+
+.navbar .close-icon {
+  color: black;
+}
+
+.menuNav li:nth-child(4) {
+  margin-bottom: 40vh;
+}
+
+.menuNav.showMenu li:hover,
+.navbar .close-icon:hover {
+  background-color: rgb(154, 226, 154);
+  color: white;
+}
+
+.logout-button-mobile {
+  align-self: start;
+  margin-left: 20px;
+}
+
+.logout-button-mobile a {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  width: 150px;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.logout-button-mobile a:hover {
+  color: white;
+  background-color: red;
+}
