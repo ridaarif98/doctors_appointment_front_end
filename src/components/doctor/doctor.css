@@ -1,0 +1,94 @@
+.all-doctors {
+  padding: 5vh 20vh 10vh 30vh;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f9ff;
+}
+
+.all-doctors h1 {
+  text-align: center;
+  margin-top: 5vh;
+  font-weight: bold;
+}
+
+.all-doctors .smal-text {
+  display: flex;
+  text-align: center;
+}
+
+div.slick-arrow.slic-next {
+  padding-top: 17px;
+}
+
+.doc-title {
+  color: blue;
+}
+
+.notice-word {
+  font-style: italic;
+}
+
+.doctor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 13vw;
+  padding: 20px;
+  margin: 10px;
+}
+
+.doctor-image {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.doctor-image img {
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.doctor .doctor-info {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.doctor .doctor-info a,
+.doctor .doctor-info p {
+  text-decoration: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.doctor-name {
+  color: #6c757d;
+}
+
+.doctor-info .icons .icon .circle {
+  text-decoration: none;
+  color: gray;
+  background-color: white;
+  font-size: 22px;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+@media only screen and (max-width: 800px) {
+  .all-doctors {
+    padding: 15vh 5vh 1vh 20vh;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .all-doctors {
+    padding: 8vh 7vh 1vh 7vh;
+  }
+}
